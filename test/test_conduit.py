@@ -70,7 +70,12 @@ class TestConduit(object):
     # #     # Test3 log out
     def test_logout(self):
         conduit_registration(self.driver)
-        self.driver.find_element_by_xpath('//a[@active-class="active"]').click()
+        element = WebDriverWait(
+            self.driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, ('//a[@active-class="active"]')))
+        )
+        element.click()
+        # self.driver.find_element_by_xpath('//a[@active-class="active"]').click()
 
     #     # logoutot kell assertezni?
     #
