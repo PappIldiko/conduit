@@ -71,7 +71,7 @@ class TestConduit(object):
     def test_logout(self):
         conduit_registration(self.driver)
         element = WebDriverWait(
-            self.driver, 5).until(
+            self.driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, ('//a[@active-class="active"]')))
         )
         element.click()
