@@ -46,7 +46,7 @@ class TestConduit(object):
         )
         assert element.text == "Your registration was successful!"
 
-    # #     # Test2 log in
+    #      # Test2 log in
     def test_login(self):
         conduit_registration(self.driver)
         self.driver.find_element_by_xpath('//a[@href="#/login"]').click()
