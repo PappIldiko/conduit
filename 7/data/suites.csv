@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Aug 05 17:55:39 GMT 2021","Thu Aug 05 17:55:44 GMT 2021","4962","test","test_conduit","TestConduit","","","test_login",""
+"passed","Thu Aug 05 17:55:29 GMT 2021","Thu Aug 05 17:55:29 GMT 2021","63","test","test_conduit","TestConduit","","","test_home_page_appearances",""
+"passed","Thu Aug 05 17:55:30 GMT 2021","Thu Aug 05 17:55:37 GMT 2021","6728","test","test_conduit","TestConduit","","","test_registration",""
+"broken","Thu Aug 05 17:55:45 GMT 2021","Thu Aug 05 17:56:04 GMT 2021","18791","test","test_conduit","TestConduit","","","test_logout",""
