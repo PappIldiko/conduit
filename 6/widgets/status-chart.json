@@ -1,0 +1,51 @@
+[ {
+  "uid" : "1f27126a29a942f2",
+  "name" : "test_home_page_appearances",
+  "time" : {
+    "start" : 1628179182662,
+    "stop" : 1628179182732,
+    "duration" : 70
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b4d27d4079c89092",
+  "name" : "test_create_new_article",
+  "time" : {
+    "start" : 1628179210409,
+    "stop" : 1628179217807,
+    "duration" : 7398
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "7693f05ade8ec670",
+  "name" : "test_logout",
+  "time" : {
+    "start" : 1628179197300,
+    "stop" : 1628179209821,
+    "duration" : 12521
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "c69a9e5749a5e11",
+  "name" : "test_registration",
+  "time" : {
+    "start" : 1628179183297,
+    "stop" : 1628179189519,
+    "duration" : 6222
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ef78b467050e54e7",
+  "name" : "test_login",
+  "time" : {
+    "start" : 1628179191062,
+    "stop" : 1628179195782,
+    "duration" : 4720
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
