@@ -1,0 +1,78 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ {
+    "name" : "fv-az39-521",
+    "children" : [ {
+      "name" : "3802-MainThread",
+      "children" : [ {
+        "name" : "test_home_page_appearances",
+        "uid" : "6d9102ec4ed23dd1",
+        "parentUid" : "1edb230ef292b486c5b3975f3c28b5f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1628177876934,
+          "stop" : 1628177876972,
+          "duration" : 38
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_create_new_article",
+        "uid" : "49a8789e1b9048e4",
+        "parentUid" : "1edb230ef292b486c5b3975f3c28b5f6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628177896330,
+          "stop" : 1628177903689,
+          "duration" : 7359
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_login",
+        "uid" : "7d84868f0249cc3c",
+        "parentUid" : "1edb230ef292b486c5b3975f3c28b5f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1628177886163,
+          "stop" : 1628177890912,
+          "duration" : 4749
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_logout",
+        "uid" : "e02633b4c621692",
+        "parentUid" : "1edb230ef292b486c5b3975f3c28b5f6",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628177891473,
+          "stop" : 1628177894760,
+          "duration" : 3287
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_registration",
+        "uid" : "1b328ecbacda9fbf",
+        "parentUid" : "1edb230ef292b486c5b3975f3c28b5f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1628177878458,
+          "stop" : 1628177884658,
+          "duration" : 6200
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1edb230ef292b486c5b3975f3c28b5f6"
+    } ],
+    "uid" : "d3780f3d14c6e7f654eccf5dea2496f8"
+  } ],
+  "name" : "timeline"
+}
