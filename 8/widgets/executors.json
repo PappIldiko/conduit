@@ -1,0 +1,10 @@
+[ {
+  "name" : "GitHub Actions",
+  "type" : "github",
+  "url" : "https://PappIldiko.github.io/conduit",
+  "buildOrder" : 8,
+  "buildName" : "GitHub Actions Run #1102428002",
+  "buildUrl" : "https://github.com/PappIldiko/conduit/actions/runs/1102428002",
+  "reportName" : "Allure Report with history",
+  "reportUrl" : "https://PappIldiko.github.io/conduit/8/"
+} ]
