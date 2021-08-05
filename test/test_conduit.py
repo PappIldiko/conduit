@@ -52,8 +52,14 @@ class TestConduit(object):
         self.driver.find_element_by_xpath('//a[@href="#/login"]').click()
         self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Ildiko123@gmail.com")
         self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Ildiko123@gmail.com")
-        time.sleep(2)
-        self.driver.find_element_by_xpath('//form/button').click()
+        # time.sleep(5)
+        # self.driver.find_element_by_xpath('//form/button').click()
+        ele = WebDriverWait(
+            self.driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, ('//form/button')))
+        )
+        ele.click()
+
         element = WebDriverWait(
             self.driver, 5).until(
             EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Your Feed"]')))
@@ -124,9 +130,9 @@ class TestConduit(object):
 
     # Test6 delete article
     # def test_delete_article(self):
-        # self.test_create_new_article()
-        # element = WebDriverWait(
-        #     self.driver, 10).until(
-        #     EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
-        # )
-        # element.click()
+    # self.test_create_new_article()
+    # element = WebDriverWait(
+    #     self.driver, 10).until(
+    #     EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
+    # )
+    # element.click()
