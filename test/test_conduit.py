@@ -6,15 +6,13 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import random
 from conduit_data import *
-
 from webdriver_manager.chrome import ChromeDriverManager
-
-browser_options = Options()
-browser_options.headless = True
 
 
 class TestConduit(object):
     def setup(self):
+        browser_options = Options()
+        browser_options.headless = False
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=browser_options)
         self.driver.get("http://localhost:1667/#/")
 
@@ -28,60 +26,60 @@ class TestConduit(object):
     # Test1 - cookie-k
 
     # # Test1 - regisztráció - rendben fut
-    def test_registration(self):
-        random_number = str(random.randint(1000, 2000))
-        username = random_number + "Teszteles"
-        email = username + "@gmail.com"
-
-        self.driver.maximize_window()
-        self.driver.find_element_by_xpath('//a[@href="#/register"]').click()
-        self.driver.find_element_by_xpath('//input[@placeholder="Username"]').send_keys(username)
-        self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys(email)
-        self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys(username)
-        time.sleep(3)
-        self.driver.find_element_by_xpath('//button').click()
-        element = WebDriverWait(
-            self.driver, 5).until(
-            EC.visibility_of_element_located((By.XPATH, ('//div[text()="Your registration was successful!"]')))
-        )
-        assert element.text == "Your registration was successful!"
+    # def test_registration(self):
+    #     random_number = str(random.randint(1000, 2000))
+    #     username = random_number + "Teszteles"
+    #     email = username + "@gmail.com"
+    #
+    #     self.driver.maximize_window()
+    #     self.driver.find_element_by_xpath('//a[@href="#/register"]').click()
+    #     self.driver.find_element_by_xpath('//input[@placeholder="Username"]').send_keys(username)
+    #     self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys(email)
+    #     self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys(username)
+    #     time.sleep(3)
+    #     self.driver.find_element_by_xpath('//button').click()
+    #     element = WebDriverWait(
+    #         self.driver, 5).until(
+    #         EC.visibility_of_element_located((By.XPATH, ('//div[text()="Your registration was successful!"]')))
+    #     )
+    #     assert element.text == "Your registration was successful!"
 
     #      # Test2 log in
-    def test_login(self):
-        conduit_registration(self.driver)
-        self.driver.find_element_by_xpath('//a[@href="#/login"]').click()
-        self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Ildiko123@gmail.com")
-        self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Ildiko123@gmail.com")
-        # time.sleep(5)
-        # self.driver.find_element_by_xpath('//form/button').click()
-        ele = WebDriverWait(
-            self.driver, 5).until(
-            EC.visibility_of_element_located((By.XPATH, ('//form/button')))
-        )
-        ele.click()
-
-        element = WebDriverWait(
-            self.driver, 5).until(
-            EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Your Feed"]')))
-        )
-        assert element.text == "Your Feed"
+    # def test_login(self):
+    #     conduit_registration(self.driver)
+    #     self.driver.find_element_by_xpath('//a[@href="#/login"]').click()
+    #     self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Ildiko123@gmail.com")
+    #     self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Ildiko123@gmail.com")
+    #     # time.sleep(5)
+    #     # self.driver.find_element_by_xpath('//form/button').click()
+    #     ele = WebDriverWait(
+    #         self.driver, 5).until(
+    #         EC.visibility_of_element_located((By.XPATH, ('//form/button')))
+    #     )
+    #     ele.click()
+    #
+    #     element = WebDriverWait(
+    #         self.driver, 5).until(
+    #         EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Your Feed"]')))
+    #     )
+    #     assert element.text == "Your Feed"
 
 
     # # #     # Test3 log out - nem fut le
-    # def test_logout(self):
-    #     conduit_registration(self.driver)
-    #     element = WebDriverWait(
-    #         self.driver, 14).until(
-    #         EC.visibility_of_element_located((By.XPATH, ('//i[@class="ion-android-exit"]')))
-    #     )
-    #     element.click()
-    #     time.sleep(2)
-    #
-    #     elem = WebDriverWait(
-    #         self.driver, 5).until(
-    #         EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Sign in"]')))
-    #     )
-    #     assert elem.text == "Sign in"
+    def test_logout(self):
+        conduit_registration(self.driver)
+        element = WebDriverWait(
+            self.driver, 14).until(
+            EC.visibility_of_element_located((By.XPATH, ('//i[@class="ion-android-exit"]')))
+        )
+        element.click()
+        time.sleep(2)
+
+        elem = WebDriverWait(
+            self.driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Sign in"]')))
+        )
+        assert elem.text == "Sign in"
 
 
         # self.driver.find_element_by_xpath('//a[@active-class="active"]').click() ('//ul/li[5]')
