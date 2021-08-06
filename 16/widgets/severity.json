@@ -1,0 +1,11 @@
+[ {
+  "uid" : "2cbaf5ef40d3a302",
+  "name" : "test_modify_article",
+  "time" : {
+    "start" : 1628244249800,
+    "stop" : 1628244265227,
+    "duration" : 15427
+  },
+  "status" : "broken",
+  "severity" : "normal"
+} ]
