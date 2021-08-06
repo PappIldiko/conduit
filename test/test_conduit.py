@@ -48,9 +48,10 @@ class TestConduit(object):
     # Test3 log in - ok
     def test_login(self):
         conduit_registration(self.driver)
+        time.sleep(3)
         self.driver.find_element_by_xpath('//a[@href="#/login"]').click()
-        self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Tester07@gmail.com")
-        self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Tester07@gmail.com")
+        self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Tester08@gmail.com")
+        self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Tester08@gmail.com")
         # time.sleep(5)
         # self.driver.find_element_by_xpath('//form/button').click()
         elem = WebDriverWait(
