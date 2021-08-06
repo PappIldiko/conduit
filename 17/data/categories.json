@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@placeholder=\"Article Title\"]\"}\n  (Session info: headless chrome=92.0.4515.131)",
+      "children" : [ {
+        "name" : "test_delete_article",
+        "uid" : "5e0793c5708b092b",
+        "parentUid" : "a9b3c053630b26e2b759e04c8b6f741e",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628252230331,
+          "stop" : 1628252241880,
+          "duration" : 11549
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a9b3c053630b26e2b759e04c8b6f741e"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
