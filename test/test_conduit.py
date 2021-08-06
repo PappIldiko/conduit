@@ -72,10 +72,11 @@ class TestConduit(object):
         conduit_registration(self.driver)
         element = WebDriverWait(
             self.driver, 14).until(
-            EC.visibility_of_element_located((By.XPATH, ('//ul/li[5]')))
+            EC.visibility_of_element_located((By.XPATH, ('//i[@class="ion-android-exit"]')))
         )
         element.click()
-        # self.driver.find_element_by_xpath('//a[@active-class="active"]').click()
+        time.sleep(2)
+        # self.driver.find_element_by_xpath('//a[@active-class="active"]').click() ('//ul/li[5]')
 
     #     # logoutot kell assertezni? igen
     #
