@@ -76,6 +76,14 @@ class TestConduit(object):
         )
         element.click()
         time.sleep(2)
+
+        elem = WebDriverWait(
+            self.driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Sign in"]')))
+        )
+        assert elem.text == "Sign in"
+
+
         # self.driver.find_element_by_xpath('//a[@active-class="active"]').click() ('//ul/li[5]')
 
     #     # logoutot kell assertezni? igen
