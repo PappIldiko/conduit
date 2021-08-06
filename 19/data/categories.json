@@ -1,0 +1,86 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//a[@href=\"#/login\"]\"}\n  (Session info: headless chrome=92.0.4515.131)",
+      "children" : [ {
+        "name" : "test_login",
+        "uid" : "e1d0d271a3119fb7",
+        "parentUid" : "9fa4cf7ee131d9e66ebc0c70cad737e5",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628255856263,
+          "stop" : 1628255862636,
+          "duration" : 6373
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9fa4cf7ee131d9e66ebc0c70cad737e5"
+    }, {
+      "name" : "selenium.common.exceptions.TimeoutException: Message:",
+      "children" : [ {
+        "name" : "test_logout",
+        "uid" : "8856230b1ceef225",
+        "parentUid" : "31bb78a6a95ede3f78b260ed048910d8",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628255864245,
+          "stop" : 1628255884934,
+          "duration" : 20689
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "31bb78a6a95ede3f78b260ed048910d8"
+    }, {
+      "name" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@placeholder=\"Article Title\"]\"}\n  (Session info: headless chrome=92.0.4515.131)",
+      "children" : [ {
+        "name" : "test_create_new_article",
+        "uid" : "d2002c831e212ec8",
+        "parentUid" : "a9b3c053630b26e2b759e04c8b6f741e",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628255886462,
+          "stop" : 1628255897895,
+          "duration" : 11433
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_modify_article",
+        "uid" : "ae3ce6d9ec0adde5",
+        "parentUid" : "a9b3c053630b26e2b759e04c8b6f741e",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628255899445,
+          "stop" : 1628255910872,
+          "duration" : 11427
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_delete_article",
+        "uid" : "d1b691a316923f5",
+        "parentUid" : "a9b3c053630b26e2b759e04c8b6f741e",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628255911424,
+          "stop" : 1628255925864,
+          "duration" : 14440
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a9b3c053630b26e2b759e04c8b6f741e"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
