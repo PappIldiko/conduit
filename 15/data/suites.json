@@ -7,14 +7,14 @@
       "children" : [ {
         "name" : "TestConduit",
         "children" : [ {
-          "name" : "test_logout",
-          "uid" : "6abd42d5679176e5",
+          "name" : "test_create_new_article",
+          "uid" : "1c812814c5c581ed",
           "parentUid" : "4f58cc4bca2083d0fd6bf6bd2ed33190",
           "status" : "passed",
           "time" : {
-            "start" : 1628242858566,
-            "stop" : 1628242867189,
-            "duration" : 8623
+            "start" : 1628243341866,
+            "stop" : 1628243355370,
+            "duration" : 13504
           },
           "flaky" : false,
           "newFailed" : false,

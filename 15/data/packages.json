@@ -3,14 +3,14 @@
   "children" : [ {
     "name" : "test.test_conduit",
     "children" : [ {
-      "name" : "test_logout",
-      "uid" : "6abd42d5679176e5",
+      "name" : "test_create_new_article",
+      "uid" : "1c812814c5c581ed",
       "parentUid" : "81ae0d23950340ec5f63efa4e29dced0",
       "status" : "passed",
       "time" : {
-        "start" : 1628242858566,
-        "stop" : 1628242867189,
-        "duration" : 8623
+        "start" : 1628243341866,
+        "stop" : 1628243355370,
+        "duration" : 13504
       },
       "flaky" : false,
       "newFailed" : false,
