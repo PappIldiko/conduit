@@ -8,13 +8,13 @@
         "name" : "TestConduit",
         "children" : [ {
           "name" : "test_logout",
-          "uid" : "945987a3a07a3215",
+          "uid" : "2719093a155f8b08",
           "parentUid" : "4f58cc4bca2083d0fd6bf6bd2ed33190",
           "status" : "passed",
           "time" : {
-            "start" : 1628416836683,
-            "stop" : 1628416848677,
-            "duration" : 11994
+            "start" : 1628417189479,
+            "stop" : 1628417196263,
+            "duration" : 6784
           },
           "flaky" : false,
           "newFailed" : false,

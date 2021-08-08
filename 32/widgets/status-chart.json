@@ -1,0 +1,11 @@
+[ {
+  "uid" : "2719093a155f8b08",
+  "name" : "test_logout",
+  "time" : {
+    "start" : 1628417189479,
+    "stop" : 1628417196263,
+    "duration" : 6784
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
