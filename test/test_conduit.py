@@ -59,14 +59,17 @@ class TestConduit(object):
     # Test4 log out - ok
     def test_logout(self):
         conduit_registration(self.driver)
-        # time.sleep(3)
         logout_btn = WebDriverWait(
             self.driver, 5).until(
             EC.visibility_of_element_located((By.XPATH, ('//i[@class="ion-android-exit"]')))
         )
         logout_btn.click()
+        # time.sleep(3)
         # self.driver.find_element_by_xpath('//i[@class="ion-android-exit"]').click()
-        # time.sleep(5)
+
+        time.sleep(5)
+        sign_in_btn = self.driver.find_element_by_xpath('//a[normalize-space(text())="Sign in"]')
+        assert sign_in_btn.text == "Sign in"
 
         # sign_in_btn = WebDriverWait(
         #     self.driver, 10).until(
