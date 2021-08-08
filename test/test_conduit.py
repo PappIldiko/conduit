@@ -168,7 +168,7 @@ class TestConduit(object):
     def test_listing_data(self):
         self.test_login()
         time.sleep(3)
-        self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
+        self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[1].click()
 
         time.sleep(3)
         self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys("Chocolate lollipop oat cake")
