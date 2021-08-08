@@ -1,0 +1,78 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ {
+    "name" : "fv-az77-771",
+    "children" : [ {
+      "name" : "3704-MainThread",
+      "children" : [ {
+        "name" : "test_logout",
+        "uid" : "60a21d2d95dfaa8f",
+        "parentUid" : "ec6d62551328b22fce9df3058f876e0f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1628426287253,
+          "stop" : 1628426288373,
+          "duration" : 1120
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_registration",
+        "uid" : "cbad357f2b39df74",
+        "parentUid" : "ec6d62551328b22fce9df3058f876e0f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1628426273253,
+          "stop" : 1628426283100,
+          "duration" : 9847
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_home_page_appearances",
+        "uid" : "fc97eca0d7fa54a0",
+        "parentUid" : "ec6d62551328b22fce9df3058f876e0f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1628426271480,
+          "stop" : 1628426271642,
+          "duration" : 162
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_create_new_article",
+        "uid" : "4beb6d415d03b07f",
+        "parentUid" : "ec6d62551328b22fce9df3058f876e0f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1628426288977,
+          "stop" : 1628426298060,
+          "duration" : 9083
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_login",
+        "uid" : "73ca23342bf45889",
+        "parentUid" : "ec6d62551328b22fce9df3058f876e0f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1628426284707,
+          "stop" : 1628426285626,
+          "duration" : 919
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "ec6d62551328b22fce9df3058f876e0f"
+    } ],
+    "uid" : "30974b06ef90af24dadbb57dc10b2b22"
+  } ],
+  "name" : "timeline"
+}
