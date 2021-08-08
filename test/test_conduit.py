@@ -67,15 +67,15 @@ class TestConduit(object):
         # time.sleep(3)
         # self.driver.find_element_by_xpath('//i[@class="ion-android-exit"]').click()
 
-        time.sleep(5)
-        sign_in_btn = self.driver.find_element_by_xpath('//a[normalize-space(text())="Sign in"]')
-        assert sign_in_btn.text == "Sign in"
-
-        # sign_in_btn = WebDriverWait(
-        #     self.driver, 10).until(
-        #     EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Sign in"]')))
-        # )
+        # time.sleep(5)
+        # sign_in_btn = self.driver.find_element_by_xpath('//a[normalize-space(text())="Sign in"]')
         # assert sign_in_btn.text == "Sign in"
+
+        sign_in_btn = WebDriverWait(
+            self.driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Sign in"]')))
+        )
+        assert sign_in_btn.text == "Sign in"
     #
     #
     #     self.driver.find_element_by_xpath('//a[@active-class="active"]').click() ('//ul/li[5]')
