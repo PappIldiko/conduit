@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert 'Lorem ipsum dolor sit amet' == 'Chocolate lollipop oat cake'\n  - Chocolate lollipop oat cake\n  + Lorem ipsum dolor sit amet",
+      "children" : [ {
+        "name" : "test_listing_data",
+        "uid" : "4f90befeafc09ce0",
+        "parentUid" : "49913ccdea15949b4781fb468f6f66e5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628431994747,
+          "stop" : 1628432008094,
+          "duration" : 13347
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "49913ccdea15949b4781fb468f6f66e5"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
