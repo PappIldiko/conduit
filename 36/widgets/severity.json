@@ -1,0 +1,11 @@
+[ {
+  "uid" : "7abc76b36cf10b0f",
+  "name" : "test_home_page_appearances",
+  "time" : {
+    "start" : 1628420678332,
+    "stop" : 1628420678413,
+    "duration" : 81
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
