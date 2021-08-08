@@ -19,22 +19,22 @@ class TestConduit(object):
     def teardown(self):
         self.driver.quit()
 
-    # Test1 - oldal megjelenése és cookie-k elfogadása ok
-    def test_home_page_appearances(self):
-        assert self.driver.find_element_by_xpath("//h1").text == "conduit"
-        element = self.driver.find_element_by_xpath('//div[@id="cookie-policy-panel"]//button[2]')
-        element.click()
+    # # Test1 - oldal megjelenése és cookie-k elfogadása ok
+    # def test_home_page_appearances(self):
+    #     assert self.driver.find_element_by_xpath("//h1").text == "conduit"
+    #     element = self.driver.find_element_by_xpath('//div[@id="cookie-policy-panel"]//button[2]')
+    #     element.click()
 
 
-    # Test2 - regisztráció - rendben fut
-    def test_registration(self):
-        conduit_registration(self.driver)
-        time.sleep(3)
-        element = WebDriverWait(
-            self.driver, 5).until(
-            EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Your Feed"]')))
-        )
-        assert element.text == "Your Feed"
+    # # Test2 - regisztráció - rendben fut
+    # def test_registration(self):
+    #     conduit_registration(self.driver)
+    #     time.sleep(3)
+    #     element = WebDriverWait(
+    #         self.driver, 5).until(
+    #         EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Your Feed"]')))
+    #     )
+    #     assert element.text == "Your Feed"
 
     # # Test3 log in - ok
     # def test_login(self):
@@ -59,19 +59,20 @@ class TestConduit(object):
     # Test4 log out - ok
     def test_logout(self):
         conduit_registration(self.driver)
-        time.sleep(3)
-        logout_btn = WebDriverWait(
-            self.driver, 10).until(
-            EC.visibility_of_element_located((By.XPATH, ('//i[@class="ion-android-exit"]')))
-        )
-        logout_btn.click()
+        time.sleep(15)
+        # logout_btn = WebDriverWait(
+        #     self.driver, 10).until(
+        #     EC.visibility_of_element_located((By.XPATH, ('//i[@class="ion-android-exit"]')))
+        # )
+        # logout_btn.click()
+        self.driver.find_element_by_xpath('//i[@class="ion-android-exit"]').click()
         # time.sleep(2)
 
-        sign_in_btn = WebDriverWait(
-            self.driver, 10).until(
-            EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Sign in"]')))
-        )
-        assert sign_in_btn.text == "Sign in"
+        # sign_in_btn = WebDriverWait(
+        #     self.driver, 10).until(
+        #     EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Sign in"]')))
+        # )
+        # assert sign_in_btn.text == "Sign in"
     #
     #
     #     self.driver.find_element_by_xpath('//a[@active-class="active"]').click() ('//ul/li[5]')
