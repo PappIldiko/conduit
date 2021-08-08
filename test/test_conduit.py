@@ -26,15 +26,15 @@ class TestConduit(object):
     #     element.click()
 
 
-    # # Test2 - regisztráció - rendben fut
-    # def test_registration(self):
-    #     conduit_registration(self.driver)
-    #     time.sleep(3)
-    #     element = WebDriverWait(
-    #         self.driver, 5).until(
-    #         EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Your Feed"]')))
-    #     )
-    #     assert element.text == "Your Feed"
+    # Test2 - regisztráció - rendben fut
+    def test_registration(self):
+        conduit_registration(self.driver)
+        time.sleep(3)
+        element = WebDriverWait(
+            self.driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Your Feed"]')))
+        )
+        assert element.text == "Your Feed"
 
     # Test3 log in - ok
     def test_login(self):
