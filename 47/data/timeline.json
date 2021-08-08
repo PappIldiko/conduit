@@ -1,0 +1,78 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ {
+    "name" : "fv-az74-184",
+    "children" : [ {
+      "name" : "3731-MainThread",
+      "children" : [ {
+        "name" : "test_delete_article",
+        "uid" : "b486a50c566833e0",
+        "parentUid" : "706c1e3de1910551113a036febc3c907",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628428885781,
+          "stop" : 1628428896927,
+          "duration" : 11146
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_modify_article",
+        "uid" : "d0cb1282abe407fd",
+        "parentUid" : "706c1e3de1910551113a036febc3c907",
+        "status" : "passed",
+        "time" : {
+          "start" : 1628428869949,
+          "stop" : 1628428885212,
+          "duration" : 15263
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_registration",
+        "uid" : "eae3b06a4ae47040",
+        "parentUid" : "706c1e3de1910551113a036febc3c907",
+        "status" : "passed",
+        "time" : {
+          "start" : 1628428858414,
+          "stop" : 1628428867852,
+          "duration" : 9438
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_home_page_appearances",
+        "uid" : "99ea43c6f28de5be",
+        "parentUid" : "706c1e3de1910551113a036febc3c907",
+        "status" : "passed",
+        "time" : {
+          "start" : 1628428856762,
+          "stop" : 1628428856836,
+          "duration" : 74
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_login",
+        "uid" : "102bc70559b7cc33",
+        "parentUid" : "706c1e3de1910551113a036febc3c907",
+        "status" : "passed",
+        "time" : {
+          "start" : 1628428868452,
+          "stop" : 1628428869384,
+          "duration" : 932
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "706c1e3de1910551113a036febc3c907"
+    } ],
+    "uid" : "c6623b41dfcd79e5cb92252f3960b300"
+  } ],
+  "name" : "timeline"
+}

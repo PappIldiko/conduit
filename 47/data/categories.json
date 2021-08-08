@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "TypeError: 'WebElement' object is not subscriptable",
+      "children" : [ {
+        "name" : "test_delete_article",
+        "uid" : "b486a50c566833e0",
+        "parentUid" : "165a0cf0a3df19a7389bee2559bb52aa",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628428885781,
+          "stop" : 1628428896927,
+          "duration" : 11146
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "165a0cf0a3df19a7389bee2559bb52aa"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
