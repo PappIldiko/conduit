@@ -177,19 +177,19 @@ class TestConduit(object):
         time.sleep(3)
         self.driver.find_element_by_xpath('//a[@href="#/@Tester12@gmail.com/"]').click()
         time.sleep(3)
-        assert self.driver.find_element_by_xpath('//h4').text == "Tester12@gmail.com"
-        assert self.driver.find_element_by_xpath('//a[@class="author router-link-exact-active router-link-active"]').text == "Tester12@gmail.com"
-        assert self.driver.find_element_by_xpath('//h1').text == "Chocolate lollipop oat cake"
-        assert self.driver.find_element_by_xpath('//a[@href="#/tag/bonbon"]').text == "bonbon"
-
-        print(self.driver.find_element_by_xpath('//h4').text)
-        print(self.driver.find_element_by_xpath('//a[@class="author router-link-exact-active router-link-active"]').text)
-        print(self.driver.find_element_by_xpath('//h1').text)
-        print(self.driver.find_element_by_xpath('//a[@href="#/tag/bonbon"]').text)
-
-        delete_btn = WebDriverWait(
-                self.driver, 10).until(
-                EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
-        )
-        delete_btn.click()
+        # assert self.driver.find_element_by_xpath('//h4').text == "Tester12@gmail.com"
+        # assert self.driver.find_element_by_xpath('//a[@class="author router-link-exact-active router-link-active"]').text == "Tester12@gmail.com"
+        # assert self.driver.find_element_by_xpath('//h1').text == "Chocolate lollipop oat cake"
+        # assert self.driver.find_element_by_xpath('//a[@href="#/tag/bonbon"]').text == "bonbon"
+        #
+        # print(self.driver.find_element_by_xpath('//h4').text)
+        # print(self.driver.find_element_by_xpath('//a[@class="author router-link-exact-active router-link-active"]').text)
+        # print(self.driver.find_element_by_xpath('//h1').text)
+        # print(self.driver.find_element_by_xpath('//a[@href="#/tag/bonbon"]').text)
+        #
+        # delete_btn = WebDriverWait(
+        #         self.driver, 10).until(
+        #         EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
+        # )
+        # delete_btn.click()
 
