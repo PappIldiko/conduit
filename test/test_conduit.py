@@ -179,8 +179,8 @@ class TestConduit(object):
         time.sleep(3)
         assert self.driver.find_element_by_xpath('//h4').text == "Tester12@gmail.com"
         assert self.driver.find_element_by_xpath('//a[@class="author router-link-exact-active router-link-active"]').text == "Tester12@gmail.com"
-        assert self.driver.find_element_by_xpath('//h1').text == "Chocolate lollipop oat cake"
-        assert self.driver.find_element_by_xpath('//a[@href="#/tag/bonbon"]').text == "bonbon"
+        # assert self.driver.find_element_by_xpath('//h1').text == "Chocolate lollipop oat cake"
+        # assert self.driver.find_element_by_xpath('//a[@href="#/tag/bonbon"]').text == "bonbon"
 
         print(self.driver.find_element_by_xpath('//h4').text)
         print(self.driver.find_element_by_xpath('//a[@class="author router-link-exact-active router-link-active"]').text)
