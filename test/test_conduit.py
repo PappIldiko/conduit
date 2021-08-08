@@ -58,6 +58,7 @@ class TestConduit(object):
 
     # Test4 log out - ok
     def test_logout(self):
+        time.sleep(3)
         conduit_registration(self.driver)
         # logout_btn = WebDriverWait(
         #     self.driver, 5).until(
