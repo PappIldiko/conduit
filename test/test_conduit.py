@@ -169,20 +169,18 @@ class TestConduit(object):
         self.test_login()
         time.sleep(3)
         self.driver.find_element_by_xpath('//a[@href="#/@Tester12@gmail.com/"]').click()
-        time.sleep(2)
+        time.sleep(5)
         self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys("Chocolate lollipop oat cake")
         self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
         self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
         time.sleep(3)
         assert self.driver.find_element_by_xpath('//h4').text == "Tester12@gmail.com"
         assert self.driver.find_element_by_xpath('//a[@class="author router-link-exact-active router-link-active"]').text == "Tester12@gmail.com"
-        # assert self.driver.find_element_by_xpath('//span[@class="date"]').text == "August 6, 2021"
         assert self.driver.find_element_by_xpath('//h1').text == "Chocolate lollipop oat cake"
         assert self.driver.find_element_by_xpath('//a[@href="#/tag/bonbon"]').text == "bonbon"
 
         print(self.driver.find_element_by_xpath('//h4').text)
         print(self.driver.find_element_by_xpath('//a[@class="author router-link-exact-active router-link-active"]').text)
-        print(self.driver.find_element_by_xpath('//span[@class="date"]').text)
         print(self.driver.find_element_by_xpath('//h1').text)
         print(self.driver.find_element_by_xpath('//a[@href="#/tag/bonbon"]').text)
 
