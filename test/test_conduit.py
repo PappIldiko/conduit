@@ -107,33 +107,33 @@ class TestConduit(object):
     #
 
     # # Test6 modify article
-    def test_modify_article(self):
-        self.test_login()
-        time.sleep(3)
-        self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
-        time.sleep(2)
-        self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
-            "Chocolate lollipop oat cake")
-        self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
-        self.driver.find_element_by_xpath(
-            '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
-            "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
-        self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
-        self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
-
-
-        time.sleep(2)
-        self.driver.find_element_by_xpath('//span[normalize-space(text()=" Edit Article")]').click()
-        self.driver.find_element_by_xpath('//a[@class="btn btn-sm btn-outline-secondary"]').click()
-        time.sleep(2)
-        # self.driver.find_element_by_xpath('//input[@class="form-control form-control-lg"]').send_keys(" modified")
-        self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(" modified")
-        time.sleep(2)
-        self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
-
-        time.sleep(2)
-        article_title = self.driver.find_element_by_xpath('//h1[text()="Chocolate lollipop oat cake modified"]')
-        assert article_title.text == "Chocolate lollipop oat cake modified"
+    # def test_modify_article(self):
+    #     self.test_login()
+    #     time.sleep(3)
+    #     self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
+    #     time.sleep(2)
+    #     self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
+    #         "Chocolate lollipop oat cake")
+    #     self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
+    #     self.driver.find_element_by_xpath(
+    #         '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
+    #         "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
+    #     self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
+    #     self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
+    #
+    #
+    #     time.sleep(2)
+    #     self.driver.find_element_by_xpath('//span[normalize-space(text()=" Edit Article")]').click()
+    #     self.driver.find_element_by_xpath('//a[@class="btn btn-sm btn-outline-secondary"]').click()
+    #     time.sleep(2)
+    #     # self.driver.find_element_by_xpath('//input[@class="form-control form-control-lg"]').send_keys(" modified")
+    #     self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(" modified")
+    #     time.sleep(2)
+    #     self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
+    #
+    #     time.sleep(2)
+    #     article_title = self.driver.find_element_by_xpath('//h1[text()="Chocolate lollipop oat cake modified"]')
+    #     assert article_title.text == "Chocolate lollipop oat cake modified"
 
     #
     #
@@ -159,6 +159,6 @@ class TestConduit(object):
         delete_btn.click()
 
         self.driver.find_element_by_xpath('//a[@href="#/@Tester12@gmail.com/"]').click() # username-re cserélni
-        article_title = self.driver.find_element_by_xpath('//h1')[0]
+        article_title = self.driver.find_elements_by_xpath('//h1')[0]
         assert article_title.text != "Chocolate lollipop oat cake"
 
