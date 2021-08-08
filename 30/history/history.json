@@ -9,13 +9,13 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "ac7e57ca03d1dc73",
-      "reportUrl" : "https://PappIldiko.github.io/conduit/29//#testresult/ac7e57ca03d1dc73",
+      "uid" : "155ca2f7a01936ee",
+      "reportUrl" : "https://PappIldiko.github.io/conduit/30//#testresult/155ca2f7a01936ee",
       "status" : "passed",
       "time" : {
-        "start" : 1628416309875,
-        "stop" : 1628416319572,
-        "duration" : 9697
+        "start" : 1628416537267,
+        "stop" : 1628416544223,
+        "duration" : 6956
       }
     } ]
   }
