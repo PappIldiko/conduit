@@ -226,7 +226,7 @@ class TestConduit(object):
 
         time.sleep(3)
         last_page_number = self.driver.find_element_by_xpath('//li[@class="page-item active" and @data-test="page-link-2"]')
-        assert last_page_number.text == 2
+        assert last_page_number.text == "2"
 
 
 
