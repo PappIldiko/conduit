@@ -4,13 +4,13 @@
     "name" : "test.test_conduit",
     "children" : [ {
       "name" : "test_logout",
-      "uid" : "155ca2f7a01936ee",
+      "uid" : "945987a3a07a3215",
       "parentUid" : "81ae0d23950340ec5f63efa4e29dced0",
       "status" : "passed",
       "time" : {
-        "start" : 1628416537267,
-        "stop" : 1628416544223,
-        "duration" : 6956
+        "start" : 1628416836683,
+        "stop" : 1628416848677,
+        "duration" : 11994
       },
       "flaky" : false,
       "newFailed" : false,
