@@ -158,7 +158,7 @@ class TestConduit(object):
     )
         delete_btn.click()
 
-        self.driver.find_element_by_xpath('//a[@href="#/@Tester12@gmail.com/"]').click() # username-re cserélni
-        article_title = self.driver.find_elements_by_xpath('//h1')[0]
-        assert article_title.text != "Chocolate lollipop oat cake"
+        # self.driver.find_element_by_xpath('//a[@href="#/@Tester12@gmail.com/"]').click() # username-re cserélni
+        # article_title = self.driver.find_elements_by_xpath('//h1')[0]
+        # assert article_title.text != "Chocolate lollipop oat cake"
 
