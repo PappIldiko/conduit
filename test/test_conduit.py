@@ -36,26 +36,26 @@ class TestConduit(object):
         )
         assert element.text == "Your Feed"
 
-    # # Test3 log in - ok
-    # def test_login(self):
-    #     conduit_registration(self.driver)
-    #     time.sleep(3)
-    #     self.driver.find_element_by_xpath('//a[@href="#/login"]').click()
-    #     self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Tester11@gmail.com")
-    #     self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Tester11@gmail.com")
-    #     # time.sleep(5)
-    #     # self.driver.find_element_by_xpath('//form/button').click()
-    #     elem = WebDriverWait(
-    #         self.driver, 5).until(
-    #         EC.visibility_of_element_located((By.XPATH, ('//form/button')))
-    #     )
-    #     elem.click()
-    #
-    #     element = WebDriverWait(
-    #         self.driver, 5).until(
-    #         EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Your Feed"]')))
-    #     )
-    #     assert element.text == "Your Feed"
+    # Test3 log in - ok
+    def test_login(self):
+        conduit_registration(self.driver)
+        time.sleep(3)
+        self.driver.find_element_by_xpath('//a[@href="#/login"]').click()
+        self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Tester12@gmail.com")
+        self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Tester12@gmail.com")
+        # time.sleep(5)
+        # self.driver.find_element_by_xpath('//form/button').click()
+        elem = WebDriverWait(
+            self.driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, ('//form/button')))
+        )
+        elem.click()
+
+        element = WebDriverWait(
+            self.driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Your Feed"]')))
+        )
+        assert element.text == "Your Feed"
     #
     #
     # # Test4 log out - ok
