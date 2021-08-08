@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert '2' == 2\n +  where '2' = <selenium.webdriver.remote.webelement.WebElement (session=\"bd956d0daa2f74ea55dea12cbef49ff6\", element=\"4adaf3c7-a779-47dd-9d2e-63edf46e4cf7\")>.text",
+      "children" : [ {
+        "name" : "test_pagination",
+        "uid" : "5a7003e6d34793e4",
+        "parentUid" : "8f21bd757461e622331e5fce9177fa5e",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628447510414,
+          "stop" : 1628447517419,
+          "duration" : 7005
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8f21bd757461e622331e5fce9177fa5e"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
