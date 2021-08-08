@@ -26,56 +26,56 @@ class TestConduit(object):
         accept_cookies_btn.click()
 
 
-    # # Test2 - regisztráció - rendben fut
-    # def test_registration(self):
-    #     conduit_registration(self.driver)
-    #     time.sleep(3)
-    #     element = WebDriverWait(
-    #         self.driver, 5).until(
-    #         EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Your Feed"]')))
-    #     )
-    #     assert element.text == "Your Feed"
-    #
-    # # Test3 log in - ok
-    # def test_login(self):
-    #     conduit_registration(self.driver)
-    #     time.sleep(3)
-    #     self.driver.find_element_by_xpath('//a[@href="#/login"]').click()
-    #     self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Tester12@gmail.com")
-    #     self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Tester12@gmail.com")
-    #     elem = WebDriverWait(
-    #         self.driver, 5).until(
-    #         EC.visibility_of_element_located((By.XPATH, ('//form/button')))
-    #     )
-    #     elem.click()
-    #
-    #     element = WebDriverWait(
-    #         self.driver, 5).until(
-    #         EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Your Feed"]')))
-    #     )
-    #     assert element.text == "Your Feed"
-    #
-    #
-    # # Test4 log out - ok
-    # def test_logout(self):
-    #     conduit_registration(self.driver)
-    #     # logout_btn = WebDriverWait(
-    #     #     self.driver, 5).until(
-    #     #     EC.visibility_of_element_located((By.XPATH, ('//i[@class="ion-android-exit"]')))
-    #     # )
-    #     # logout_btn.click()
-    #     time.sleep(10)
-    #     self.driver.find_element_by_xpath('//i[@class="ion-android-exit"]').click()
-    #
-    #     time.sleep(10)
-    #     sign_in_btn = self.driver.find_element_by_xpath('//a[normalize-space(text())="Sign in"]')
-    #     assert sign_in_btn.text == "Sign in"
-    #
-    #     # sign_in_btn = WebDriverWait(
-    #     #     self.driver, 5).until(
-    #     #     EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Sign in"]')))
-    #     # )
-    #     # assert sign_in_btn.text == "Sign in"
+    # Test2 - regisztráció - rendben fut
+    def test_registration(self):
+        conduit_registration(self.driver)
+        time.sleep(3)
+        element = WebDriverWait(
+            self.driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Your Feed"]')))
+        )
+        assert element.text == "Your Feed"
+
+    # Test3 log in - ok
+    def test_login(self):
+        conduit_registration(self.driver)
+        time.sleep(3)
+        self.driver.find_element_by_xpath('//a[@href="#/login"]').click()
+        self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Tester12@gmail.com")
+        self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Tester12@gmail.com")
+        elem = WebDriverWait(
+            self.driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, ('//form/button')))
+        )
+        elem.click()
+
+        element = WebDriverWait(
+            self.driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Your Feed"]')))
+        )
+        assert element.text == "Your Feed"
+
+
+    # Test4 log out - ok
+    def test_logout(self):
+        conduit_registration(self.driver)
+        # logout_btn = WebDriverWait(
+        #     self.driver, 5).until(
+        #     EC.visibility_of_element_located((By.XPATH, ('//i[@class="ion-android-exit"]')))
+        # )
+        # logout_btn.click()
+        time.sleep(10)
+        self.driver.find_element_by_xpath('//i[@class="ion-android-exit"]').click()
+
+        time.sleep(10)
+        sign_in_btn = self.driver.find_element_by_xpath('//a[normalize-space()="Sign in"]')
+        assert sign_in_btn.text == "Sign in"
+
+        # sign_in_btn = WebDriverWait(
+        #     self.driver, 5).until(
+        #     EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Sign in"]')))
+        # )
+        # assert sign_in_btn.text == "Sign in"
     # #
     # #
     # #     self.driver.find_element_by_xpath('//a[@active-class="active"]').click() ('//ul/li[5]')
