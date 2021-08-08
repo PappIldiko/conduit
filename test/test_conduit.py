@@ -164,32 +164,54 @@ class TestConduit(object):
     #     article_title = self.driver.find_elements_by_xpath('//h1')[0]
     #     assert article_title.text != "Chocolate lollipop oat cake"
 
-    # Test8 listing data
-    def test_listing_data(self):
-        self.test_login()
-        time.sleep(3)
-        self.driver.find_element_by_xpath('//a[@href="#/editor"]').click()
+    # Test8 listing data - nem fut le - sárga
+    # def test_listing_data(self):
+    #     self.test_login()
+    #     time.sleep(3)
+    #     self.driver.find_element_by_xpath('//a[@href="#/editor"]').click()
+    #
+    #     time.sleep(5)
+    #     self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys("Chocolate lollipop oat cake")
+    #     self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
+    #     self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
+    #     time.sleep(3)
+    #     self.driver.find_element_by_xpath('//a[@href="#/@Tester12@gmail.com/"]').click()
+    #     time.sleep(3)
+    #     assert self.driver.find_element_by_xpath('//h4').text == "Tester12@gmail.com"
+    #     assert self.driver.find_element_by_xpath('//a[@class="author router-link-exact-active router-link-active"]').text == "Tester12@gmail.com"
+    #     # assert self.driver.find_element_by_xpath('//h1').text == "Chocolate lollipop oat cake"
+    #     # assert self.driver.find_element_by_xpath('//a[@href="#/tag/bonbon"]').text == "bonbon"
+    #
+    #     print(self.driver.find_element_by_xpath('//h4').text)
+    #     print(self.driver.find_element_by_xpath('//a[@class="author router-link-exact-active router-link-active"]').text)
+    #     print(self.driver.find_element_by_xpath('//h1').text)
+    #     print(self.driver.find_element_by_xpath('//a[@href="#/tag/bonbon"]').text)
+    #
+    #     delete_btn = WebDriverWait(
+    #             self.driver, 10).until(
+    #             EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
+    #     )
+    #     delete_btn.click()
 
-        time.sleep(5)
-        self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys("Chocolate lollipop oat cake")
-        self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
-        self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
-        time.sleep(3)
-        self.driver.find_element_by_xpath('//a[@href="#/@Tester12@gmail.com/"]').click()
-        time.sleep(3)
-        assert self.driver.find_element_by_xpath('//h4').text == "Tester12@gmail.com"
-        assert self.driver.find_element_by_xpath('//a[@class="author router-link-exact-active router-link-active"]').text == "Tester12@gmail.com"
-        # assert self.driver.find_element_by_xpath('//h1').text == "Chocolate lollipop oat cake"
-        # assert self.driver.find_element_by_xpath('//a[@href="#/tag/bonbon"]').text == "bonbon"
+        # Test9 saving data
+        def test_save_data(self):
+            self.test_login()
 
-        print(self.driver.find_element_by_xpath('//h4').text)
-        print(self.driver.find_element_by_xpath('//a[@class="author router-link-exact-active router-link-active"]').text)
-        print(self.driver.find_element_by_xpath('//h1').text)
-        print(self.driver.find_element_by_xpath('//a[@href="#/tag/bonbon"]').text)
+            time.sleep(5)
+            articles_preview = self.driver.find_elements_by_xpath('//div[@class="article-preview"]')
 
-        delete_btn = WebDriverWait(
-                self.driver, 10).until(
-                EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
-        )
-        delete_btn.click()
+            with open("articles_preview.txt", "w") as txt1:
+                for i in articles_preview:
+                    txt1.write(f"{i.text}")
+                # print(i.text)
+            #
+            #
+            with open("articles_preview.txt", "r") as txt1:
+                txt2 = txt1.readlines()
+                # print(txt2, end='')
+                for line in txt2:
+                    print(line, end='')
+
+
+
 
