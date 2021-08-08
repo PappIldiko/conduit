@@ -193,24 +193,28 @@ class TestConduit(object):
     #     )
     #     delete_btn.click()
 
-        # Test9 saving data
-        def test_save_data(self):
-            self.test_login()
+    # Test9 saving data
+    def test_save_data(self):
+        self.test_login()
 
-            time.sleep(5)
-            articles_preview = self.driver.find_elements_by_xpath('//div[@class="article-preview"]')
+        time.sleep(5)
+        articles_preview = self.driver.find_elements_by_xpath('//div[@class="article-preview"]')
 
-            with open("articles_preview.txt", "w") as txt1:
-                for i in articles_preview:
-                    txt1.write(f"{i.text}")
-                # print(i.text)
-            #
-            #
-            with open("articles_preview.txt", "r") as txt1:
-                txt2 = txt1.readlines()
-                # print(txt2, end='')
-                for line in txt2:
-                    print(line, end='')
+        with open("articles_preview.txt", "w") as txt1:
+            for i in articles_preview:
+                txt1.write(f"{i.text}")
+            # print(i.text)
+
+        with open("articles_preview.txt", "r") as txt1:
+            txt2 = txt1.readlines()
+            # print(txt2, end='')
+            for line in txt2:
+                print(line, end='')
+
+
+        # Test10 pagination
+        # Test10 ismételt és sorozatos adatbevitel
+
 
 
 
