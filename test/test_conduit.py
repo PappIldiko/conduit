@@ -194,6 +194,22 @@ class TestConduit(object):
     #     )
     #     delete_btn.click()
 
+    # Test8b listing data -
+    def test_listing_data(self):
+        self.test_login()
+        time.sleep(5)
+        self.driver.find_element_by_xpath('//a[@href="#/tag/lorem"]').click()
+        time.sleep(5)
+        listed_articles = self.driver.find_elements_by_tag_name('h1')
+        for i in listed_articles:
+            if i.text == 'conduit':
+                continue
+            title = i.text
+
+        articles_with_lorem_tag = self.driver.find_elements_by_xpath('//div[@class="article-preview"]//a[@href="#/tag/lorem"]')
+        assert len(listed_articles) - 1 == len(articles_with_lorem_tag) # összehasonlítom a h1-es elemeket tartalmazó
+        # listát - 1-et kivonva hosszát az olyan tag/lorem-et tartalmazó lista hosszával, amik cikk előnézetekben találhatók
+
     # # Test9 saving data
     # def test_saving_data(self):
     #     self.test_login()
@@ -214,19 +230,21 @@ class TestConduit(object):
     #         # assert line[1] == "testuser1"
 
 
-    # Test10 pagination
-    def test_pagination(self):
-        self.test_login()
-        time.sleep(3)
+    # # Test10 pagination
+    # def test_pagination(self):
+    #     self.test_login()
+    #     time.sleep(3)
+    #
+    #
+    #     page_numbers = self.driver.find_elements_by_class_name("page-link")
+    #     for i in page_numbers:
+    #         i.click()
+    #
+    #     time.sleep(3)
+    #     last_page_number = self.driver.find_element_by_xpath('//li[@class="page-item active" and @data-test="page-link-2"]')
+    #     assert last_page_number.text == "2"
 
 
-        page_numbers = self.driver.find_elements_by_class_name("page-link")
-        for i in page_numbers:
-            i.click()
-
-        time.sleep(3)
-        last_page_number = self.driver.find_element_by_xpath('//li[@class="page-item active" and @data-test="page-link-2"]')
-        assert last_page_number.text == "2"
 
 
 
