@@ -150,7 +150,7 @@ class TestConduit(object):
     #
     # # Test7 - cikk törlése - belépés után a New Article gombra kattintás, új cikk létrehozása, majd törlés után
     # annak ellenőrzése, hogy a megjelenő My Articles listában egyik cikknek a címe sem egyezik a létrehozott cikk
-    # címével
+    # címével // a cikk aloldalán nem jelenik meg a delete gomb
     def test_delete_article(self):
         self.test_login()
         time.sleep(3)
@@ -177,43 +177,45 @@ class TestConduit(object):
         time.sleep(3)
         article_titles = self.driver.find_elements_by_xpath('//h1')
         for i in article_titles:
+            time.sleep(3)
             assert i.text != "Chocolate lollipop oat cake"
-    #
 
-    # Test8 listing data - ok
-    # def test_listing_data(self):
-    #     self.test_login()
-    #     time.sleep(5)
-    #     self.driver.find_element_by_xpath('//a[@href="#/tag/lorem"]').click()
-    #     time.sleep(5)
-    #     listed_articles = self.driver.find_elements_by_tag_name('h1')
-    #     for i in listed_articles:
-    #         if i.text == 'conduit':
-    #             continue
-    #         title = i.text
-    #
-    #     articles_with_lorem_tag = self.driver.find_elements_by_xpath('//div[@class="article-preview"]//a[@href="#/tag/lorem"]')
-    #     assert len(listed_articles) - 1 == len(articles_with_lorem_tag) # összehasonlítom a h1-es elemeket tartalmazó
-    #     # listát - 1-et kivonva hosszát az olyan tag/lorem-et tartalmazó lista hosszával, amik cikk előnézetekben találhatók
+    # Test8 - adatok kilistázása - belépés után a lorem cimkére kattintás, a lorem cimkével rendelkező cikkek
+    # kilistázódnak, ezután összehasonlítom a kapott lista hosszát (1-et kivonva belőle a conduit h1-es elem miatt) az
+    # olyan lorem cimkét tartalmazó lista hosszával, amik megtalálhatók a kilistázott cikkek között
+    def test_listing_data(self):
+        self.test_login()
+        time.sleep(5)
+        self.driver.find_element_by_xpath('//a[@href="#/tag/lorem"]').click()
+        time.sleep(5)
+        listed_articles = self.driver.find_elements_by_tag_name('h1')
+        for i in listed_articles:
+            if i.text == 'conduit':
+                continue
+            title = i.text
 
-    # # Test9 saving data
-    # def test_saving_data(self):
-    #     self.test_login()
-    #
-    #     time.sleep(5)
-    #     articles_preview = self.driver.find_elements_by_xpath('//div[@class="article-preview"]')
-    #
-    #     with open("articles_preview.txt", "w") as txt1:
-    #         for i in articles_preview:
-    #             txt1.write(f"{i.text}")
-    #         # print(i.text)
-    #
-    #     with open("articles_preview.txt", "r") as txt1:
-    #         txt2 = txt1.readlines()
-    #         # print(txt2, end='')
-    #         for line in txt2:
-    #             print(line, end='')
-    #         # assert line[1] == "testuser1"
+        articles_with_lorem_tag = self.driver.find_elements_by_xpath('//div[@class="article-preview"]//a[@href="#/tag/lorem"]')
+        assert len(listed_articles) - 1 == len(articles_with_lorem_tag)
+
+    # Test9 - adatok kimentése - belépés után létrehozom a Global Feedben található cikkek listáját, a listában
+    # található cikkek felületen megjelenő adatait beleiratom egy articles_preview nevű text fájlba, ezután a txt fájl
+    # tartalmát soronként kiolvasom, leellenőrzöm, hogy az első sor testuser1-e
+    def test_saving_data(self):
+        self.test_login()
+        time.sleep(5)
+        articles_preview = self.driver.find_elements_by_xpath('//div[@class="article-preview"]')
+
+        with open("articles_preview.txt", "w") as txt1:
+            for i in articles_preview:
+                txt1.write(f"{i.text}")
+            # print(i.text)
+
+        with open("articles_preview.txt", "r") as txt1:
+            txt2 = txt1.readlines()
+            # print(txt2, end='')
+            for line in txt2:
+                print(line, end='')
+                assert line[1] == "testuser1"
 
 
 
