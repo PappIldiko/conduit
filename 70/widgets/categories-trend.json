@@ -1,9 +1,0 @@
-[ {
-  "buildOrder" : 70,
-  "reportUrl" : "https://PappIldiko.github.io/conduit/70/",
-  "reportName" : "Allure Report with history",
-  "data" : {
-    "Product defects" : 2,
-    "Test defects" : 1
-  }
-} ]

@@ -1,0 +1,86 @@
+{
+  "uid" : "e1f70729f054169f",
+  "name" : "test_delete_article",
+  "fullName" : "test.test_conduit.TestConduit#test_delete_article",
+  "historyId" : "85f12719baf830d4fd44fb60dffa3ced",
+  "time" : {
+    "start" : 1628710809254,
+    "stop" : 1628710861416,
+    "duration" : 52162
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert 'Chocolate lollipop oat cake' != 'Chocolate lollipop oat cake'\n +  where 'Chocolate lollipop oat cake' = <selenium.webdriver.remote.webelement.WebElement (session=\"9a646911093b41261b454db0cbbe3859\", element=\"2de5a641-8920-4067-9913-9a77c1388b63\")>.text",
+  "statusTrace" : "self = <test_conduit.TestConduit object at 0x7f0c9dcd1670>\n\n    def test_delete_article(self):\n        self.test_login()\n        time.sleep(3)\n        self.driver.find_elements_by_xpath('//a[@class=\"nav-link\"]')[0].click()\n        time.sleep(5)\n        self.driver.find_element_by_xpath('//input[@placeholder=\"Article Title\"]').send_keys(\n            \"Chocolate lollipop oat cake\")\n        # self.driver.find_elements_by_xpath('//form//input')[1].send_keys(\"About cakes\")\n        # self.driver.find_element_by_xpath(\n        #     '//form//textarea[@placeholder=\"Write your article (in markdown)\"]').send_keys(\n        #     \"Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.\")\n        # self.driver.find_elements_by_xpath('//form//input')[2].send_keys(\"bonbon\")\n        self.driver.find_element_by_xpath('//button[normalize-space(text()=\"Publish Article\")]').click()\n    \n        delete_btn = WebDriverWait(\n            self.driver, 10).until(\n            EC.visibility_of_element_located((By.XPATH, ('//button[@class=\"btn btn-outline-danger btn-sm\"]')))\n    )\n        delete_btn.click()\n    \n    \n        time.sleep(3)\n        self.driver.find_element_by_xpath('//a[@href=\"#/@Tester12@gmail.com/\"]').click() # username-re cserélhető\n        time.sleep(3)\n        article_titles = self.driver.find_elements_by_xpath('//h1')\n        for i in article_titles:\n            time.sleep(3)\n>           assert i.text != \"Chocolate lollipop oat cake\"\nE           assert 'Chocolate lollipop oat cake' != 'Chocolate lollipop oat cake'\nE            +  where 'Chocolate lollipop oat cake' = <selenium.webdriver.remote.webelement.WebElement (session=\"9a646911093b41261b454db0cbbe3859\", element=\"2de5a641-8920-4067-9913-9a77c1388b63\")>.text\n\ntest/test_conduit.py:181: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert 'Chocolate lollipop oat cake' != 'Chocolate lollipop oat cake'\n +  where 'Chocolate lollipop oat cake' = <selenium.webdriver.remote.webelement.WebElement (session=\"9a646911093b41261b454db0cbbe3859\", element=\"2de5a641-8920-4067-9913-9a77c1388b63\")>.text",
+    "statusTrace" : "self = <test_conduit.TestConduit object at 0x7f0c9dcd1670>\n\n    def test_delete_article(self):\n        self.test_login()\n        time.sleep(3)\n        self.driver.find_elements_by_xpath('//a[@class=\"nav-link\"]')[0].click()\n        time.sleep(5)\n        self.driver.find_element_by_xpath('//input[@placeholder=\"Article Title\"]').send_keys(\n            \"Chocolate lollipop oat cake\")\n        # self.driver.find_elements_by_xpath('//form//input')[1].send_keys(\"About cakes\")\n        # self.driver.find_element_by_xpath(\n        #     '//form//textarea[@placeholder=\"Write your article (in markdown)\"]').send_keys(\n        #     \"Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.\")\n        # self.driver.find_elements_by_xpath('//form//input')[2].send_keys(\"bonbon\")\n        self.driver.find_element_by_xpath('//button[normalize-space(text()=\"Publish Article\")]').click()\n    \n        delete_btn = WebDriverWait(\n            self.driver, 10).until(\n            EC.visibility_of_element_located((By.XPATH, ('//button[@class=\"btn btn-outline-danger btn-sm\"]')))\n    )\n        delete_btn.click()\n    \n    \n        time.sleep(3)\n        self.driver.find_element_by_xpath('//a[@href=\"#/@Tester12@gmail.com/\"]').click() # username-re cserélhető\n        time.sleep(3)\n        article_titles = self.driver.find_elements_by_xpath('//h1')\n        for i in article_titles:\n            time.sleep(3)\n>           assert i.text != \"Chocolate lollipop oat cake\"\nE           assert 'Chocolate lollipop oat cake' != 'Chocolate lollipop oat cake'\nE            +  where 'Chocolate lollipop oat cake' = <selenium.webdriver.remote.webelement.WebElement (session=\"9a646911093b41261b454db0cbbe3859\", element=\"2de5a641-8920-4067-9913-9a77c1388b63\")>.text\n\ntest/test_conduit.py:181: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "1b629026ea9229a4",
+      "name" : "log",
+      "source" : "1b629026ea9229a4.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "b42f8a5c006624f5",
+      "name" : "stderr",
+      "source" : "b42f8a5c006624f5.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_conduit"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestConduit"
+  }, {
+    "name" : "host",
+    "value" : "fv-az83-188"
+  }, {
+    "name" : "thread",
+    "value" : "3670-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_conduit"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "e1f70729f054169f.json",
+  "parameterValues" : [ ]
+}
