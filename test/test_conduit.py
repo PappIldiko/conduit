@@ -20,9 +20,6 @@ class TestConduit(object):
     def teardown(self):
         self.driver.quit()
 
-# fgvbe kitenni a webdriverwaiteket, a find elemnts clickeket, a find elemnts sendkeysket és asserteket  /
-    # time sleepeket végignézni /
-    # belépési változókat kitenni variable.be/cikkek cimet stb kitenni variable.be / kommentelni/
 
     # Test1 - oldal megjelenése - a bejelentkezési oldalon a 'conduit' szó megjelenése, majd a cookie-k elfogadása
     # gomb megkeresése megkattintása
@@ -237,8 +234,8 @@ class TestConduit(object):
 
     # Test11 - ismételt és sorozatos adatbevitel - belépés után az első cikket megkeressük a Global Feedben és
     # rákattintunk, létrehozunk egy num nevű változót 0 értékkel, egy for ciklusban a komment mezőbe egymás után 5 db
-    # kommentet létrehozunk, különböző szövegekkel, amiket leellenőrzünk, majd töröljük a létrehozott kommenteket
-    def test_pagination(self):
+    # kommentet létrehozunk, különböző szövegekkel, amiket leellenőrzünk, majd töröljük a létrehozott kommenteket / 1es és 3as bennemarad
+    def test_sequential_data_input(self):
         self.test_login()
         time.sleep(3)
 
