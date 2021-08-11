@@ -9,6 +9,7 @@ from conduit_data import *
 from webdriver_manager.chrome import ChromeDriverManager
 
 
+
 class TestConduit(object):
     def setup(self):
         browser_options = Options()
@@ -18,6 +19,10 @@ class TestConduit(object):
 
     def teardown(self):
         self.driver.quit()
+
+# fgvbe kitenni a webdriverwaiteket, a find elemnts clickeket, a find elemnts sendkeysket és asserteket  /
+    # time sleepeket végignézni /
+    # belépési változókat kitenni variable.be/cikkek cimet stb kitenni variable.be / kommentelni/
 
     # Test1 - oldal megjelenése és cookie-k elfogadása ok
     def test_home_page_appearances(self):
@@ -165,50 +170,22 @@ class TestConduit(object):
     #     article_title = self.driver.find_elements_by_xpath('//h1')[0]
     #     assert article_title.text != "Chocolate lollipop oat cake"
     #
-    # # Test8 listing data - nem fut le - sárga
+
+    # Test8 listing data - ok
     # def test_listing_data(self):
     #     self.test_login()
-    #     time.sleep(3)
-    #     self.driver.find_element_by_xpath('//a[@href="#/editor"]').click()
-    #
     #     time.sleep(5)
-    #     self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys("Chocolate lollipop oat cake")
-    #     self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
-    #     self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
-    #     time.sleep(3)
-    #     self.driver.find_element_by_xpath('//a[@href="#/@Tester12@gmail.com/"]').click()
-    #     time.sleep(3)
-    #     assert self.driver.find_element_by_xpath('//h4').text == "Tester12@gmail.com"
-    #     assert self.driver.find_element_by_xpath('//a[@class="author router-link-exact-active router-link-active"]').text == "Tester12@gmail.com"
-    #     # assert self.driver.find_element_by_xpath('//h1').text == "Chocolate lollipop oat cake"
-    #     # assert self.driver.find_element_by_xpath('//a[@href="#/tag/bonbon"]').text == "bonbon"
+    #     self.driver.find_element_by_xpath('//a[@href="#/tag/lorem"]').click()
+    #     time.sleep(5)
+    #     listed_articles = self.driver.find_elements_by_tag_name('h1')
+    #     for i in listed_articles:
+    #         if i.text == 'conduit':
+    #             continue
+    #         title = i.text
     #
-    #     print(self.driver.find_element_by_xpath('//h4').text)
-    #     print(self.driver.find_element_by_xpath('//a[@class="author router-link-exact-active router-link-active"]').text)
-    #     print(self.driver.find_element_by_xpath('//h1').text)
-    #     print(self.driver.find_element_by_xpath('//a[@href="#/tag/bonbon"]').text)
-    #
-    #     delete_btn = WebDriverWait(
-    #             self.driver, 10).until(
-    #             EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
-    #     )
-    #     delete_btn.click()
-
-    # Test8b listing data -
-    def test_listing_data(self):
-        self.test_login()
-        time.sleep(5)
-        self.driver.find_element_by_xpath('//a[@href="#/tag/lorem"]').click()
-        time.sleep(5)
-        listed_articles = self.driver.find_elements_by_tag_name('h1')
-        for i in listed_articles:
-            if i.text == 'conduit':
-                continue
-            title = i.text
-
-        articles_with_lorem_tag = self.driver.find_elements_by_xpath('//div[@class="article-preview"]//a[@href="#/tag/lorem"]')
-        assert len(listed_articles) - 1 == len(articles_with_lorem_tag) # összehasonlítom a h1-es elemeket tartalmazó
-        # listát - 1-et kivonva hosszát az olyan tag/lorem-et tartalmazó lista hosszával, amik cikk előnézetekben találhatók
+    #     articles_with_lorem_tag = self.driver.find_elements_by_xpath('//div[@class="article-preview"]//a[@href="#/tag/lorem"]')
+    #     assert len(listed_articles) - 1 == len(articles_with_lorem_tag) # összehasonlítom a h1-es elemeket tartalmazó
+    #     # listát - 1-et kivonva hosszát az olyan tag/lorem-et tartalmazó lista hosszával, amik cikk előnézetekben találhatók
 
     # # Test9 saving data
     # def test_saving_data(self):
