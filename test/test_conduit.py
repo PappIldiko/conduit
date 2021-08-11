@@ -148,33 +148,36 @@ class TestConduit(object):
     #
     #
     #
-    # # Test7 delete article
-    # def test_delete_article(self):
-    #     self.test_login()
-    #     time.sleep(3)
-    #     self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
-    #     time.sleep(5)
-    #     self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
-    #         "Chocolate lollipop oat cake")
-    #     # self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
-    #     # self.driver.find_element_by_xpath(
-    #     #     '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
-    #     #     "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
-    #     # self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
-    #     self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
-    #
-    #     delete_btn = WebDriverWait(
-    #         self.driver, 10).until(
-    #         EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
-    # )
-    #     delete_btn.click()
-    #
-    #
-    #     time.sleep(3)
-    #     self.driver.find_element_by_xpath('//a[@href="#/@Tester12@gmail.com/"]').click() # username-re cserélni
-    #     time.sleep(3)
-    #     article_title = self.driver.find_elements_by_xpath('//h1')[0]
-    #     assert article_title.text != "Chocolate lollipop oat cake"
+    # # Test7 - cikk törlése - belépés után a New Article gombra kattintás, új cikk létrehozása, majd törlés után
+    # annak ellenőrzése, hogy a megjelenő My Articles listában egyik cikknek a címe sem egyezik a létrehozott cikk
+    # címével
+    def test_delete_article(self):
+        self.test_login()
+        time.sleep(3)
+        self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
+        time.sleep(5)
+        self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
+            "Chocolate lollipop oat cake")
+        # self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
+        # self.driver.find_element_by_xpath(
+        #     '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
+        #     "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
+        # self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
+        self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
+
+        delete_btn = WebDriverWait(
+            self.driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
+    )
+        delete_btn.click()
+
+
+        time.sleep(3)
+        self.driver.find_element_by_xpath('//a[@href="#/@Tester12@gmail.com/"]').click() # username-re cserélhető
+        time.sleep(3)
+        article_titles = self.driver.find_elements_by_xpath('//h1')
+        for i in article_titles:
+            assert i.text != "Chocolate lollipop oat cake"
     #
 
     # Test8 listing data - ok
