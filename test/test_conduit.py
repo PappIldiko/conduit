@@ -215,29 +215,49 @@ class TestConduit(object):
             # print(txt2, end='')
             for line in txt2:
                 print(line, end='')
-                assert line[1] == "testuser1"
+                # assert line[1] == "testuser1"
 
 
 
-    # # Test10 pagination
-    # def test_pagination(self):
-    #     self.test_login()
-    #     time.sleep(3)
-    #
-    #
-    #     page_numbers = self.driver.find_elements_by_class_name("page-link")
-    #     for i in page_numbers:
-    #         i.click()
-    #
-    #     time.sleep(3)
-    #     last_page_number = self.driver.find_element_by_xpath('//li[@class="page-item active" and @data-test="page-link-2"]')
-    #     assert last_page_number.text == "2"
+    # Test10 - lapozás - belépés után létrehozok egy listát, amelyben a page-link osztálynevű lapozó gombok vannak,
+    # a lista elemein for ciklussal végigmegyek, majd megkeresem az utosló lapozó gombot, ami a lenti attribútumokkal
+    # rendelkezik, ellenőrzöm, hogy a gomb szövege 2-e
+    def test_pagination(self):
+        self.test_login()
+        time.sleep(3)
+
+        page_numbers = self.driver.find_elements_by_class_name("page-link")
+        for i in page_numbers:
+            i.click()
+
+        time.sleep(3)
+        last_page_number = self.driver.find_element_by_xpath('//li[@class="page-item active" and @data-test="page-link-2"]')
+        assert last_page_number.text == "2"
 
 
+    # Test11 - ismételt és sorozatos adatbevitel - belépés után az első cikket megkeressük a Global Feedben és
+    # rákattintunk, létrehozunk egy num nevű változót 0 értékkel, egy for ciklusban a komment mezőbe egymás után 5 db
+    # kommentet létrehozunk, különböző szövegekkel, amiket leellenőrzünk, majd töröljük a létrehozott kommenteket
+    def test_pagination(self):
+        self.test_login()
+        time.sleep(3)
 
+        self.driver.find_elements_by_xpath('//h1')[1].click()
+        time.sleep(3)
 
+        num = 0
+        for i in range(5):
+            self.driver.find_element_by_xpath('//textarea').send_keys(f"Comment {num}")
+            self.driver.find_element_by_xpath('//button[text()="Post Comment"]').click()
+            time.sleep(3)
+            assert self.driver.find_element_by_xpath('//p[@class="card-text"]').text == (f"Comment {num}")
+            num += 1
 
-    # Test10 ismételt és sorozatos adatbevitel
+        created_comments = self.driver.find_elements_by_xpath('//i[@class="ion-trash-a"]')
+
+        for i in created_comments:
+            i.click()
+            time.sleep(5)
 
 
 
