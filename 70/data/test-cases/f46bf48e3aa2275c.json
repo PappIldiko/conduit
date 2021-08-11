@@ -1,0 +1,92 @@
+{
+  "uid" : "f46bf48e3aa2275c",
+  "name" : "test_saving_data",
+  "fullName" : "test.test_conduit.TestConduit#test_saving_data",
+  "historyId" : "cae02db9eab270ce73743b169e477163",
+  "time" : {
+    "start" : 1628708682670,
+    "stop" : 1628708688760,
+    "duration" : 6090
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert 'e' == 'testuser1'\n  - testuser1\n  + e",
+  "statusTrace" : "self = <test_conduit.TestConduit object at 0x7efe617024c0>\n\n    def test_saving_data(self):\n        self.test_login()\n        time.sleep(5)\n        articles_preview = self.driver.find_elements_by_xpath('//div[@class=\"article-preview\"]')\n    \n        with open(\"articles_preview.txt\", \"w\") as txt1:\n            for i in articles_preview:\n                txt1.write(f\"{i.text}\")\n            # print(i.text)\n    \n        with open(\"articles_preview.txt\", \"r\") as txt1:\n            txt2 = txt1.readlines()\n            # print(txt2, end='')\n            for line in txt2:\n                print(line, end='')\n>               assert line[1] == \"testuser1\"\nE               AssertionError: assert 'e' == 'testuser1'\nE                 - testuser1\nE                 + e\n\ntest/test_conduit.py:218: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert 'e' == 'testuser1'\n  - testuser1\n  + e",
+    "statusTrace" : "self = <test_conduit.TestConduit object at 0x7efe617024c0>\n\n    def test_saving_data(self):\n        self.test_login()\n        time.sleep(5)\n        articles_preview = self.driver.find_elements_by_xpath('//div[@class=\"article-preview\"]')\n    \n        with open(\"articles_preview.txt\", \"w\") as txt1:\n            for i in articles_preview:\n                txt1.write(f\"{i.text}\")\n            # print(i.text)\n    \n        with open(\"articles_preview.txt\", \"r\") as txt1:\n            txt2 = txt1.readlines()\n            # print(txt2, end='')\n            for line in txt2:\n                print(line, end='')\n>               assert line[1] == \"testuser1\"\nE               AssertionError: assert 'e' == 'testuser1'\nE                 - testuser1\nE                 + e\n\ntest/test_conduit.py:218: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "51d5282b5ec41e88",
+      "name" : "log",
+      "source" : "51d5282b5ec41e88.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "201ccdbf5d104606",
+      "name" : "stdout",
+      "source" : "201ccdbf5d104606.txt",
+      "type" : "text/plain",
+      "size" : 10
+    }, {
+      "uid" : "50d921714dc9e38e",
+      "name" : "stderr",
+      "source" : "50d921714dc9e38e.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_conduit"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestConduit"
+  }, {
+    "name" : "host",
+    "value" : "fv-az81-747"
+  }, {
+    "name" : "thread",
+    "value" : "3725-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_conduit"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "f46bf48e3aa2275c.json",
+  "parameterValues" : [ ]
+}
