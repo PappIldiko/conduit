@@ -24,14 +24,16 @@ class TestConduit(object):
     # time sleepeket végignézni /
     # belépési változókat kitenni variable.be/cikkek cimet stb kitenni variable.be / kommentelni/
 
-    # Test1 - oldal megjelenése és cookie-k elfogadása ok
+    # Test1 - oldal megjelenése - a bejelentkezési oldalon a 'conduit' szó megjelenése, majd a cookie-k elfogadása
+    # gomb megkeresése megkattintása
     def test_home_page_appearances(self):
         assert self.driver.find_element_by_xpath("//h1").text == "conduit"
         accept_cookies_btn = self.driver.find_element_by_xpath('//div[@id="cookie-policy-panel"]//button[2]')
         accept_cookies_btn.click()
 
 
-    # Test2 - regisztráció - rendben fut
+    # Test2 - regisztráció - regisztráció gombra kattintás, adatok kitöltése, Sign up gombra kattintás, Welcome pop up
+    # ablak ok gombjára kattintás, Your Feed fül elem megjelenése igazolja a regisztráció létrejöttét
     def test_registration(self):
         self.driver.find_element_by_xpath('//a[@href="#/register"]').click()
         self.driver.find_element_by_xpath('//input[@placeholder="Username"]').send_keys("Tester12@gmail.com")
@@ -48,7 +50,8 @@ class TestConduit(object):
         )
         assert element.text == "Your Feed"
 
-    # Test3 log in - ok
+    # Test3 bejelentkezés - a főoldalon a Sign in gombra kattintás, belépési adatok beírása a megkeresett mezőkbe,
+    # a Sign in gombra kattintás, Your Feed fül elem megjelenése igazolja a belépés megtörténtét
     def test_login(self):
         self.driver.find_element_by_xpath('//a[@href="#/login"]').click()
         self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Tester12@gmail.com")
@@ -66,79 +69,82 @@ class TestConduit(object):
         assert element.text == "Your Feed"
 
 
-    # # Test4 log out - ok
-    # def test_logout(self):
-    #     self.test_login()
-    #     logout_btn = WebDriverWait(
-    #         self.driver, 5).until(
-    #         EC.visibility_of_element_located((By.XPATH, ('//i[@class="ion-android-exit"]')))
-    #     )
-    #     logout_btn.click()
+    # # Test4 - kijelentkezés - a login függvény meghívása, a kilépés gomb kattintása, a Sign in gomb megjelenés
+    # a kilépés tényét igazolja
+    def test_logout(self):
+        self.test_login()
+        logout_btn = WebDriverWait(
+            self.driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, ('//i[@class="ion-android-exit"]')))
+        )
+        logout_btn.click()
+
+        sign_in_btn = WebDriverWait(
+            self.driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Sign in"]')))
+        )
+        assert sign_in_btn.text == "Sign in"
+
     #
-    #     sign_in_btn = WebDriverWait(
-    #         self.driver, 5).until(
-    #         EC.visibility_of_element_located((By.XPATH, ('//a[normalize-space(text())="Sign in"]')))
-    #     )
-    #     assert sign_in_btn.text == "Sign in"
-    #
-    #
-    #
-    #
-    # # Test5 create new article - ok
-    # def test_create_new_article(self):
-    #     self.test_login()
-    #     time.sleep(3)
-    #     self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
-    #     time.sleep(2)
-    #     self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
-    #         "Chocolate lollipop oat cake")
-    #     self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
-    #     self.driver.find_element_by_xpath(
-    #         '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
-    #         "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
-    #     self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
-    #     self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
-    #
-    #     time.sleep(2)
-    #     article_title = self.driver.find_element_by_xpath('//h1[text()="Chocolate lollipop oat cake"]')
-    #     assert article_title.text == "Chocolate lollipop oat cake"
-    #
-    #
-    #     delete_btn = WebDriverWait(
-    #         self.driver, 5).until(
-    #         EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
-    #     )
-    #     delete_btn.click()
-    #
-    #
-    # # Test6 modify article
-    # def test_modify_article(self):
-    #     self.test_login()
-    #     time.sleep(3)
-    #     self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
-    #     time.sleep(2)
-    #     self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
-    #         "Chocolate lollipop oat cake")
-    #     self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
-    #     self.driver.find_element_by_xpath(
-    #         '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
-    #         "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
-    #     self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
-    #     self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
+    # Test5 - új cikk létrehozása -  a login függvény meghívása, a New article gomb kattintása, a megjelenő 4 mezőbe
+    # adatok küldése, kitöltése után a Publish Article gomb megnyomása, a cikk oldalán a cikk címének megjelenése
+    # igazolja a cikk létrejöttét, végül  acikk törlése
+    def test_create_new_article(self):
+        self.test_login()
+        time.sleep(3)
+        self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
+        time.sleep(2)
+        self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
+            "Chocolate lollipop oat cake")
+        self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
+        self.driver.find_element_by_xpath(
+            '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
+            "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
+        self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
+        self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
+
+        time.sleep(2)
+        article_title = self.driver.find_element_by_xpath('//h1[text()="Chocolate lollipop oat cake"]')
+        assert article_title.text == "Chocolate lollipop oat cake"
+
+
+        delete_btn = WebDriverWait(
+            self.driver, 5).until(
+            EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
+        )
+        delete_btn.click()
     #
     #
-    #     time.sleep(2)
-    #     self.driver.find_element_by_xpath('//span[normalize-space(text()=" Edit Article")]').click()
-    #     self.driver.find_element_by_xpath('//a[@class="btn btn-sm btn-outline-secondary"]').click()
-    #     time.sleep(2)
-    #     # self.driver.find_element_by_xpath('//input[@class="form-control form-control-lg"]').send_keys(" modified")
-    #     self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(" modified")
-    #     time.sleep(2)
-    #     self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
-    #
-    #     time.sleep(2)
-    #     article_title = self.driver.find_element_by_xpath('//h1[text()="Chocolate lollipop oat cake modified"]')
-    #     assert article_title.text == "Chocolate lollipop oat cake modified"
+    # # Test6 - cikk módosítása - belépés, cikk létrehozása, az Edit Article gombra kattintás, a cikk címébe a
+    # "modified" szó beírása és a Publish Article gombbal a változtatás mentése, végül a cikk aloldalán megjelenő
+    # módosított cím ellenőrzése
+    def test_modify_article(self):
+        self.test_login()
+        time.sleep(3)
+        self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
+        time.sleep(2)
+        self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
+            "Chocolate lollipop oat cake")
+        self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
+        self.driver.find_element_by_xpath(
+            '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
+            "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
+        self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
+        self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
+
+
+        time.sleep(2)
+        self.driver.find_element_by_xpath('//span[normalize-space(text()=" Edit Article")]').click()
+        self.driver.find_element_by_xpath('//a[@class="btn btn-sm btn-outline-secondary"]').click()
+        time.sleep(2)
+        # self.driver.find_element_by_xpath('//input[@class="form-control form-control-lg"]').send_keys(" modified")
+        self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(" modified")
+        time.sleep(2)
+        self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
+
+        time.sleep(2)
+        article_title = self.driver.find_element_by_xpath('//h1[text()="Chocolate lollipop oat cake modified"]')
+        assert article_title.text == "Chocolate lollipop oat cake modified"
     #
     #
     #
