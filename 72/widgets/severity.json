@@ -1,0 +1,111 @@
+[ {
+  "uid" : "d807025787252ab4",
+  "name" : "test_login",
+  "time" : {
+    "start" : 1628711378196,
+    "stop" : 1628711379143,
+    "duration" : 947
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d69ad8099513c1ed",
+  "name" : "test_home_page_appearances",
+  "time" : {
+    "start" : 1628711365334,
+    "stop" : 1628711365405,
+    "duration" : 71
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ee128c45ca16819b",
+  "name" : "test_create_new_article",
+  "time" : {
+    "start" : 1628711382979,
+    "stop" : 1628711392223,
+    "duration" : 9244
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "16f4b41dbc7ec5b8",
+  "name" : "test_logout",
+  "time" : {
+    "start" : 1628711379775,
+    "stop" : 1628711381353,
+    "duration" : 1578
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "838f725eb1a9790b",
+  "name" : "test_listing_data",
+  "time" : {
+    "start" : 1628711465007,
+    "stop" : 1628711476182,
+    "duration" : 11175
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9c25b6a56711dca7",
+  "name" : "test_modify_article",
+  "time" : {
+    "start" : 1628711393861,
+    "stop" : 1628711409258,
+    "duration" : 15397
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "43faaebc38684d93",
+  "name" : "test_registration",
+  "time" : {
+    "start" : 1628711367026,
+    "stop" : 1628711376560,
+    "duration" : 9534
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e05000b38256bd70",
+  "name" : "test_delete_article",
+  "time" : {
+    "start" : 1628711410960,
+    "stop" : 1628711463269,
+    "duration" : 52309
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "f4d94d81ac2512b8",
+  "name" : "test_saving_data",
+  "time" : {
+    "start" : 1628711477803,
+    "stop" : 1628711484026,
+    "duration" : 6223
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "25f8dd24fe4f3eee",
+  "name" : "test_sequential_data_input",
+  "time" : {
+    "start" : 1628711493449,
+    "stop" : 1628711531254,
+    "duration" : 37805
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "224d493b09deb6c0",
+  "name" : "test_pagination",
+  "time" : {
+    "start" : 1628711485663,
+    "stop" : 1628711492806,
+    "duration" : 7143
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

@@ -1,0 +1,47 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert 'Chocolate lollipop oat cake' != 'Chocolate lollipop oat cake'\n +  where 'Chocolate lollipop oat cake' = <selenium.webdriver.remote.webelement.WebElement (session=\"6687f67f81f0cb425c769de6747e46a8\", element=\"f4552be9-70d5-4fc6-8d92-07d795de40fe\")>.text",
+      "children" : [ {
+        "name" : "test_delete_article",
+        "uid" : "e05000b38256bd70",
+        "parentUid" : "fd199d92aefd9436cbd642c3e304b398",
+        "status" : "failed",
+        "time" : {
+          "start" : 1628711410960,
+          "stop" : 1628711463269,
+          "duration" : 52309
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "fd199d92aefd9436cbd642c3e304b398"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  }, {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: element is not attached to the page document\n  (Session info: headless chrome=92.0.4515.131)",
+      "children" : [ {
+        "name" : "test_sequential_data_input",
+        "uid" : "25f8dd24fe4f3eee",
+        "parentUid" : "9e4b04115d49c52de61237f6c27d4a61",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628711493449,
+          "stop" : 1628711531254,
+          "duration" : 37805
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9e4b04115d49c52de61237f6c27d4a61"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
