@@ -4,8 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-import random
-# from conduit_data import *
 from webdriver_manager.chrome import ChromeDriverManager
 import csv
 
@@ -34,9 +32,9 @@ class TestConduit(object):
     # ablak ok gombjára kattintás, Your Feed fül elem megjelenése igazolja a regisztráció létrejöttét
     def test_registration(self):
         self.driver.find_element_by_xpath('//a[@href="#/register"]').click()
-        self.driver.find_element_by_xpath('//input[@placeholder="Username"]').send_keys("Tester12@gmail.com")
-        self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Tester12@gmail.com")
-        self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Tester12@gmail.com")
+        self.driver.find_element_by_xpath('//input[@placeholder="Username"]').send_keys("Tester15@gmail.com")
+        self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Tester15@gmail.com")
+        self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Tester15@gmail.com")
         time.sleep(3)
         self.driver.find_element_by_xpath('//button').click()
         time.sleep(3)
@@ -53,8 +51,8 @@ class TestConduit(object):
     def test_login(self):
         time.sleep(2)
         self.driver.find_element_by_xpath('//a[@href="#/login"]').click()
-        self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Tester12@gmail.com")
-        self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Tester12@gmail.com")
+        self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Tester15@gmail.com")
+        self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Tester15@gmail.com")
         sign_in_btn = WebDriverWait(
             self.driver, 5).until(
             EC.visibility_of_element_located((By.XPATH, ('//form/button')))
@@ -84,7 +82,7 @@ class TestConduit(object):
         )
         assert sign_in_btn.text == "Sign in"
 
-    #
+
     # Test5 - új cikk létrehozása -  a login függvény meghívása, a New article gomb kattintása, a megjelenő 4 mezőbe
     # adatok küldése, kitöltése után a Publish Article gomb megnyomása, a cikk oldalán a cikk címének megjelenése
     # igazolja a cikk létrejöttét, végül  acikk törlése
@@ -107,31 +105,14 @@ class TestConduit(object):
         assert article_title.text == "Chocolate lollipop oat cake"
 
 
-        # delete_btn = WebDriverWait(
-        #     self.driver, 5).until(
-        #     EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
-        # )
-        # delete_btn.click()
-    #
-    #
+
+
+
     # # Test6 - cikk módosítása - belépés, cikk létrehozása, az Edit Article gombra kattintás, a cikk címébe a
     # "modified" szó beírása és a Publish Article gombbal a változtatás mentése, végül a cikk aloldalán megjelenő
     # módosított cím ellenőrzése
     def test_modify_article(self):
-        # self.test_login()
-        # time.sleep(5)
         self.test_create_new_article()
-        # self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
-        # time.sleep(2)
-        # self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
-        #     "Chocolate lollipop oat cake")
-        # self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
-        # self.driver.find_element_by_xpath(
-        #     '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
-        #     "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
-        # self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
-        # self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
-
 
         time.sleep(3)
         self.driver.find_element_by_xpath('//span[normalize-space(text()=" Edit Article")]').click()
@@ -145,26 +126,13 @@ class TestConduit(object):
         time.sleep(2)
         article_title = self.driver.find_element_by_xpath('//h1[text()="Chocolate lollipop oat cake modified"]')
         assert article_title.text == "Chocolate lollipop oat cake modified"
-    #
-    #
-    #
+
+
     # # Test7 - cikk törlése - belépés után a New Article gombra kattintás, új cikk létrehozása, majd törlés után
     # annak ellenőrzése, hogy a megjelenő My Articles listában egyik cikknek a címe sem egyezik a létrehozott cikk
     # címével // a cikk aloldalán nem jelenik meg a delete gomb
     def test_delete_article(self):
-        # self.test_login()
-        # time.sleep(5)
         self.test_create_new_article()
-        # self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
-        # time.sleep(5)
-        # self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
-        #     "Chocolate lollipop oat cake")
-        # # self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
-        # # self.driver.find_element_by_xpath(
-        # #     '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
-        # #     "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
-        # # self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
-        # self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
 
         delete_btn = WebDriverWait(
             self.driver, 10).until(
@@ -172,16 +140,12 @@ class TestConduit(object):
     )
         delete_btn.click()
 
-
         time.sleep(3)
         self.driver.find_element_by_xpath('//a[@href="#/@Tester12@gmail.com/"]').click() # username-re cserélhető
         time.sleep(3)
         article_titles = self.driver.find_elements_by_xpath('//h1')[-1]
         assert "Chocolate lollipop oat cake" not in article_titles
 
-        # for i in article_titles:
-        #     time.sleep(3)
-        #     assert i.text != "Chocolate lollipop oat cake"
 
     # Test8 - adatok kilistázása - belépés után a lorem cimkére kattintás, a lorem cimkével rendelkező cikkek
     # kilistázódnak, ezután összehasonlítom a kapott lista hosszát (1-et kivonva belőle a conduit h1-es elem miatt) az
@@ -192,10 +156,10 @@ class TestConduit(object):
         self.driver.find_element_by_xpath('//a[@href="#/tag/lorem"]').click()
         time.sleep(5)
         listed_articles = self.driver.find_elements_by_tag_name('h1')
-        for i in listed_articles:
-            if i.text == 'conduit':
-                continue
-            title = i.text
+        # for i in listed_articles:
+        #     if i.text == 'conduit':
+        #         continue
+        #     title = i.text
 
         articles_with_lorem_tag = self.driver.find_elements_by_xpath('//div[@class="article-preview"]//a[@href="#/tag/lorem"]')
         assert len(listed_articles) - 1 == len(articles_with_lorem_tag)
@@ -211,7 +175,7 @@ class TestConduit(object):
         with open("articles_preview.txt", "w") as txt1:
             for i in articles_preview:
                 txt1.write(f"{i.text}")
-            # print(i.text)
+
 
         with open("articles_preview.txt", "r") as txt1:
             txt2 = txt1.readlines()
@@ -248,16 +212,13 @@ class TestConduit(object):
         self.driver.find_elements_by_xpath('//h1')[1].click()
         time.sleep(3)
 
-        with open('comments1.csv', 'r', encoding="UTF-8") as c_file:
+        with open('C:\Users\pappi\PycharmProjects\kocka\conduit\test\comments.csv', 'r', encoding="UTF-8") as c_file:
             file_table = csv.reader(c_file, delimiter=',')
             for row in file_table:
                 self.driver.find_element_by_xpath('//textarea').send_keys(row)
                 self.driver.find_element_by_xpath('//button[text()="Post Comment"]').click()
                 time.sleep(3)
-                # assert browser.find_element_by_xpath('//p[@class="card-text"]').text == row.text
-                print(row)
-                # res_file.write(row[1])
-                # res_file.write("\n")
+
 
         assert self.driver.find_elements_by_xpath('//p[@class="card-text"]')[0].text == "Comment5"
 
