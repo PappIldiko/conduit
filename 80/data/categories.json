@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\pappi\\\\PycharmProjects\\\\kocka\\\\conduit\\\\test\\\\comments.csv'",
+      "children" : [ {
+        "name" : "test_sequential_data_input",
+        "uid" : "dbcc8eceeb2d9fa5",
+        "parentUid" : "aa70fefe3cb3f2b73fe3786375ea945e",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628801880150,
+          "stop" : 1628801889094,
+          "duration" : 8944
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "aa70fefe3cb3f2b73fe3786375ea945e"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
