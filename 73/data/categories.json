@@ -1,0 +1,39 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//a[@href=\"#/login\"]\"}\n  (Session info: headless chrome=92.0.4515.131)",
+      "children" : [ {
+        "name" : "test_modify_article",
+        "uid" : "35f1f11dc75ced5",
+        "parentUid" : "9fa4cf7ee131d9e66ebc0c70cad737e5",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628793606523,
+          "stop" : 1628793610475,
+          "duration" : 3952
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_delete_article",
+        "uid" : "b27da109e5de78a4",
+        "parentUid" : "9fa4cf7ee131d9e66ebc0c70cad737e5",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628793612172,
+          "stop" : 1628793616128,
+          "duration" : 3956
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9fa4cf7ee131d9e66ebc0c70cad737e5"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
