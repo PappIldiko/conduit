@@ -212,7 +212,7 @@ class TestConduit(object):
         self.driver.find_elements_by_xpath('//h1')[1].click()
         time.sleep(3)
 
-        with open('../comments1.csv', 'r', encoding="UTF-8") as c_file:
+        with open('C:\\Users\\pappi\\PycharmProjects\\kocka\\conduit\\test\\comments.csv', 'r', encoding="UTF-8") as c_file:
             file_table = csv.reader(c_file, delimiter=',')
             for row in file_table:
                 self.driver.find_element_by_xpath('//textarea').send_keys(row)
