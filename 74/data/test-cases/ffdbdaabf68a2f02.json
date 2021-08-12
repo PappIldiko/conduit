@@ -1,0 +1,86 @@
+{
+  "uid" : "ffdbdaabf68a2f02",
+  "name" : "test_sequential_data_input",
+  "fullName" : "test.test_conduit.TestConduit#test_sequential_data_input",
+  "historyId" : "6446d4c592f0c7631c1ffcee9d99387c",
+  "time" : {
+    "start" : 1628796982957,
+    "stop" : 1628796989959,
+    "duration" : 7002
+  },
+  "status" : "broken",
+  "statusMessage" : "FileNotFoundError: [Errno 2] No such file or directory: 'comments.csv'",
+  "statusTrace" : "self = <test_conduit.TestConduit object at 0x7f054616ff70>\n\n    def test_sequential_data_input(self):\n        self.test_login()\n        time.sleep(3)\n    \n        self.driver.find_elements_by_xpath('//h1')[1].click()\n        time.sleep(3)\n    \n>       with open('comments.csv', 'r', encoding=\"UTF-8\") as c_file:\nE       FileNotFoundError: [Errno 2] No such file or directory: 'comments.csv'\n\ntest/test_conduit.py:250: FileNotFoundError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "FileNotFoundError: [Errno 2] No such file or directory: 'comments.csv'",
+    "statusTrace" : "self = <test_conduit.TestConduit object at 0x7f054616ff70>\n\n    def test_sequential_data_input(self):\n        self.test_login()\n        time.sleep(3)\n    \n        self.driver.find_elements_by_xpath('//h1')[1].click()\n        time.sleep(3)\n    \n>       with open('comments.csv', 'r', encoding=\"UTF-8\") as c_file:\nE       FileNotFoundError: [Errno 2] No such file or directory: 'comments.csv'\n\ntest/test_conduit.py:250: FileNotFoundError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "532f4ce49a89f9f4",
+      "name" : "log",
+      "source" : "532f4ce49a89f9f4.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "f252a95abdeabacf",
+      "name" : "stderr",
+      "source" : "f252a95abdeabacf.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_conduit"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestConduit"
+  }, {
+    "name" : "host",
+    "value" : "fv-az83-831"
+  }, {
+    "name" : "thread",
+    "value" : "3836-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_conduit"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "ffdbdaabf68a2f02.json",
+  "parameterValues" : [ ]
+}
