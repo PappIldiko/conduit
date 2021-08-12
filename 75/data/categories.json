@@ -1,0 +1,43 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//h1[text()=\"Chocolate lollipop oat cake modified\"]\"}\n  (Session info: headless chrome=92.0.4515.131)",
+      "children" : [ {
+        "name" : "test_modify_article",
+        "uid" : "b4254fa5eb2e9891",
+        "parentUid" : "193e606bbb9cc7f0d69825cc54cb5a31",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628798031308,
+          "stop" : 1628798051517,
+          "duration" : 20209
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "193e606bbb9cc7f0d69825cc54cb5a31"
+    }, {
+      "name" : "TypeError: argument of type 'WebElement' is not iterable",
+      "children" : [ {
+        "name" : "test_delete_article",
+        "uid" : "11f13cd9f0199184",
+        "parentUid" : "37007da2861a1b1e107228198d4a0292",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628798053203,
+          "stop" : 1628798070276,
+          "duration" : 17073
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "37007da2861a1b1e107228198d4a0292"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
