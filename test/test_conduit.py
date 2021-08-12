@@ -105,11 +105,11 @@ class TestConduit(object):
         assert article_title.text == "Chocolate lollipop oat cake"
 
 
-        delete_btn = WebDriverWait(
-            self.driver, 5).until(
-            EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
-        )
-        delete_btn.click()
+        # delete_btn = WebDriverWait(
+        #     self.driver, 5).until(
+        #     EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
+        # )
+        # delete_btn.click()
     #
     #
     # # Test6 - cikk módosítása - belépés, cikk létrehozása, az Edit Article gombra kattintás, a cikk címébe a
@@ -118,16 +118,17 @@ class TestConduit(object):
     def test_modify_article(self):
         self.test_login()
         time.sleep(3)
-        self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
-        time.sleep(2)
-        self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
-            "Chocolate lollipop oat cake")
-        self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
-        self.driver.find_element_by_xpath(
-            '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
-            "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
-        self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
-        self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
+        self.test_create_new_article()
+        # self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
+        # time.sleep(2)
+        # self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
+        #     "Chocolate lollipop oat cake")
+        # self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
+        # self.driver.find_element_by_xpath(
+        #     '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
+        #     "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
+        # self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
+        # self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
 
 
         time.sleep(2)
@@ -151,16 +152,17 @@ class TestConduit(object):
     def test_delete_article(self):
         self.test_login()
         time.sleep(3)
-        self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
-        time.sleep(5)
-        self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
-            "Chocolate lollipop oat cake")
-        # self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
-        # self.driver.find_element_by_xpath(
-        #     '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
-        #     "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
-        # self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
-        self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
+        self.test_create_new_article()
+        # self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
+        # time.sleep(5)
+        # self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
+        #     "Chocolate lollipop oat cake")
+        # # self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
+        # # self.driver.find_element_by_xpath(
+        # #     '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
+        # #     "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
+        # # self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
+        # self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
 
         delete_btn = WebDriverWait(
             self.driver, 10).until(
@@ -172,10 +174,12 @@ class TestConduit(object):
         time.sleep(3)
         self.driver.find_element_by_xpath('//a[@href="#/@Tester12@gmail.com/"]').click() # username-re cserélhető
         time.sleep(3)
-        article_titles = self.driver.find_elements_by_xpath('//h1')
-        for i in article_titles:
-            time.sleep(3)
-            assert i.text != "Chocolate lollipop oat cake"
+        article_titles = self.driver.find_elements_by_xpath('//h1')[-1]
+        assert "Chocolate lollipop oat cake" not in article_titles
+
+        # for i in article_titles:
+        #     time.sleep(3)
+        #     assert i.text != "Chocolate lollipop oat cake"
 
     # Test8 - adatok kilistázása - belépés után a lorem cimkére kattintás, a lorem cimkével rendelkező cikkek
     # kilistázódnak, ezután összehasonlítom a kapott lista hosszát (1-et kivonva belőle a conduit h1-es elem miatt) az
@@ -250,11 +254,11 @@ class TestConduit(object):
             assert self.driver.find_element_by_xpath('//p[@class="card-text"]').text == (f"Comment {num}")
             num += 1
 
-        created_comments = self.driver.find_elements_by_xpath('//i[@class="ion-trash-a"]')
-
-        for i in created_comments:
-            i.click()
-            time.sleep(5)
+        # created_comments = self.driver.find_elements_by_xpath('//i[@class="ion-trash-a"]')
+        #
+        # for i in created_comments:
+        #     i.click()
+        #     time.sleep(5)
 
 
 
