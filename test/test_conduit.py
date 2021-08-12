@@ -51,6 +51,7 @@ class TestConduit(object):
     # Test3 bejelentkezés - a főoldalon a Sign in gombra kattintás, belépési adatok beírása a megkeresett mezőkbe,
     # a Sign in gombra kattintás, Your Feed fül elem megjelenése igazolja a belépés megtörténtét
     def test_login(self):
+        time.sleep(2)
         self.driver.find_element_by_xpath('//a[@href="#/login"]').click()
         self.driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys("Tester12@gmail.com")
         self.driver.find_element_by_xpath('//input[@placeholder="Password"]').send_keys("Tester12@gmail.com")
@@ -117,8 +118,8 @@ class TestConduit(object):
     # "modified" szó beírása és a Publish Article gombbal a változtatás mentése, végül a cikk aloldalán megjelenő
     # módosított cím ellenőrzése
     def test_modify_article(self):
-        self.test_login()
-        time.sleep(5)
+        # self.test_login()
+        # time.sleep(5)
         self.test_create_new_article()
         # self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
         # time.sleep(2)
@@ -132,7 +133,7 @@ class TestConduit(object):
         # self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
 
 
-        time.sleep(2)
+        time.sleep(3)
         self.driver.find_element_by_xpath('//span[normalize-space(text()=" Edit Article")]').click()
         self.driver.find_element_by_xpath('//a[@class="btn btn-sm btn-outline-secondary"]').click()
         time.sleep(2)
@@ -151,8 +152,8 @@ class TestConduit(object):
     # annak ellenőrzése, hogy a megjelenő My Articles listában egyik cikknek a címe sem egyezik a létrehozott cikk
     # címével // a cikk aloldalán nem jelenik meg a delete gomb
     def test_delete_article(self):
-        self.test_login()
-        time.sleep(5)
+        # self.test_login()
+        # time.sleep(5)
         self.test_create_new_article()
         # self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
         # time.sleep(5)
@@ -247,7 +248,7 @@ class TestConduit(object):
         self.driver.find_elements_by_xpath('//h1')[1].click()
         time.sleep(3)
 
-        with open('comments.csv', 'r', encoding="UTF-8") as c_file:
+        with open('comments1.csv', 'r', encoding="UTF-8") as c_file:
             file_table = csv.reader(c_file, delimiter=',')
             for row in file_table:
                 self.driver.find_element_by_xpath('//textarea').send_keys(row)
