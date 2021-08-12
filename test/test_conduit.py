@@ -5,8 +5,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 import random
-from conduit_data import *
+# from conduit_data import *
 from webdriver_manager.chrome import ChromeDriverManager
+import csv
 
 
 
@@ -117,7 +118,7 @@ class TestConduit(object):
     # módosított cím ellenőrzése
     def test_modify_article(self):
         self.test_login()
-        time.sleep(3)
+        time.sleep(5)
         self.test_create_new_article()
         # self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
         # time.sleep(2)
@@ -151,7 +152,7 @@ class TestConduit(object):
     # címével // a cikk aloldalán nem jelenik meg a delete gomb
     def test_delete_article(self):
         self.test_login()
-        time.sleep(3)
+        time.sleep(5)
         self.test_create_new_article()
         # self.driver.find_elements_by_xpath('//a[@class="nav-link"]')[0].click()
         # time.sleep(5)
@@ -246,19 +247,19 @@ class TestConduit(object):
         self.driver.find_elements_by_xpath('//h1')[1].click()
         time.sleep(3)
 
-        num = 0
-        for i in range(5):
-            self.driver.find_element_by_xpath('//textarea').send_keys(f"Comment {num}")
-            self.driver.find_element_by_xpath('//button[text()="Post Comment"]').click()
-            time.sleep(3)
-            assert self.driver.find_element_by_xpath('//p[@class="card-text"]').text == (f"Comment {num}")
-            num += 1
+        with open('comments.csv', 'r', encoding="UTF-8") as c_file:
+            file_table = csv.reader(c_file, delimiter=',')
+            for row in file_table:
+                self.driver.find_element_by_xpath('//textarea').send_keys(row)
+                self.driver.find_element_by_xpath('//button[text()="Post Comment"]').click()
+                time.sleep(3)
+                # assert browser.find_element_by_xpath('//p[@class="card-text"]').text == row.text
+                print(row)
+                # res_file.write(row[1])
+                # res_file.write("\n")
 
-        # created_comments = self.driver.find_elements_by_xpath('//i[@class="ion-trash-a"]')
-        #
-        # for i in created_comments:
-        #     i.click()
-        #     time.sleep(5)
+        assert self.driver.find_elements_by_xpath('//p[@class="card-text"]')[0].text == "Comment5"
+
 
 
 
