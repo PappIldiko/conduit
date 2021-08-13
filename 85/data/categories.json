@@ -1,0 +1,43 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//h1[text()=\"Chocolate lollipop oat cake modified\"]\"}\n  (Session info: headless chrome=92.0.4515.131)",
+      "children" : [ {
+        "name" : "test_modify_article",
+        "uid" : "e359f6a898d3995",
+        "parentUid" : "193e606bbb9cc7f0d69825cc54cb5a31",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628876623850,
+          "stop" : 1628876647970,
+          "duration" : 24120
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "193e606bbb9cc7f0d69825cc54cb5a31"
+    }, {
+      "name" : "selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <button class=\"btn btn-outline-danger btn-sm\">...</button> is not clickable at point (425, 184). Other element would receive the click: <div class=\"swal-overlay swal-overlay--show-modal\" tabindex=\"-1\">...</div>\n  (Session info: headless chrome=92.0.4515.131)",
+      "children" : [ {
+        "name" : "test_delete_article",
+        "uid" : "e1e7b1db1e8a37ae",
+        "parentUid" : "4a873f69e8dd9e094436725b1d5f6007",
+        "status" : "broken",
+        "time" : {
+          "start" : 1628876649652,
+          "stop" : 1628876661642,
+          "duration" : 11990
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "4a873f69e8dd9e094436725b1d5f6007"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
