@@ -110,7 +110,7 @@ class TestConduit(object):
         self.driver.find_element_by_xpath('//a[@class="btn btn-sm btn-outline-secondary"]').click()
         time.sleep(2)
         # self.driver.find_element_by_xpath('//input[@class="form-control form-control-lg"]').send_keys(" modified")
-        self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(" modified")
+        self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys("Chocolate lollipop oat cake modified")
         time.sleep(3)
         self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
 
