@@ -114,7 +114,7 @@ class TestConduit(object):
         time.sleep(3)
         self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
 
-        time.sleep(4)
+        time.sleep(5)
         article_title = self.driver.find_element_by_xpath('//h1[text()="Chocolate lollipop oat cake modified"]')
         assert article_title.text == "Chocolate lollipop oat cake modified"
 
