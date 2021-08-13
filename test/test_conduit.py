@@ -112,7 +112,6 @@ class TestConduit(object):
         article_about = self.driver.find_element_by_xpath('//p[text()="About cakes"]')
         assert article_about.text == "About cakes"
 
-
     # Test7 - cikk törlése - az új cikk létrehozása fgv meghívása, majd törlés után a megjelenő My Articles listában
     # egyik cikknek a címe sem egyezik a létrehozott cikk címével
     def test_delete_article(self):
