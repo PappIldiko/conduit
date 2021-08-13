@@ -8,7 +8,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 import csv
 
 
-
 class TestConduit(object):
     def setup(self):
         browser_options = Options()
@@ -19,14 +18,12 @@ class TestConduit(object):
     def teardown(self):
         self.driver.quit()
 
-
     # Test1 - oldal megjelenése - a 'conduit' szó megjelenése, majd a cookie-k elfogadása
     # gomb megkeresése megkattintása
     def test_home_page_appearances(self):
         assert self.driver.find_element_by_xpath("//h1").text == "conduit"
         accept_cookies_btn = self.driver.find_element_by_xpath('//div[@id="cookie-policy-panel"]//button[2]')
         accept_cookies_btn.click()
-
 
     # Test2 - regisztráció - regisztráció gombra kattintás, adatok kitöltése, Sign up gombra kattintás, Welcome pop up
     # ablak ok gombjára kattintás, Your Feed fül elem megjelenése igazolja a regisztráció létrejöttét
@@ -65,9 +62,8 @@ class TestConduit(object):
         )
         assert element.text == "Your Feed"
 
-
-    # # # Test4 - kijelentkezés - a login függvény meghívása, a kilépés gomb kattintása, a Sign in gomb megjelenés
-    # # a kilépés tényét igazolja
+    # Test4 - kijelentkezés - a login függvény meghívása, a kilépés gomb kattintása, a Sign in gomb megjelenés
+    # a kilépés tényét igazolja
     def test_logout(self):
         self.test_login()
         logout_btn = WebDriverWait(
@@ -82,10 +78,9 @@ class TestConduit(object):
         )
         assert sign_in_btn.text == "Sign in"
 
-
-    # # Test5 - új cikk létrehozása -  a login függvény meghívása, a New article gomb kattintása, a megjelenő 4 mezőbe
-    # # adatok küldése, kitöltése után a Publish Article gomb megnyomása, a cikk oldalán a cikk címének megjelenése
-    # # igazolja a cikk létrejöttét, végül  acikk törlése
+    # Test5 - új cikk létrehozása -  a login függvény meghívása, a New article gomb kattintása, a megjelenő 4 mezőbe
+    # adatok küldése, kitöltése után a Publish Article gomb megnyomása, a cikk oldalán a cikk címének megjelenése
+    # igazolja a cikk létrejöttét, végül  a cikk törlése
     def test_create_new_article(self):
         self.test_login()
         time.sleep(3)
@@ -104,9 +99,9 @@ class TestConduit(object):
         article_title = self.driver.find_element_by_xpath('//h1[text()="Chocolate lollipop oat cake"]')
         assert article_title.text == "Chocolate lollipop oat cake"
 
-    # # # Test6 - cikk módosítása - belépés, cikk létrehozása, az Edit Article gombra kattintás, a cikk címébe a
-    # # "modified" szó beírása és a Publish Article gombbal a változtatás mentése, végül a cikk aloldalán megjelenő
-    # # módosított cím ellenőrzése
+    # Test6 - cikk módosítása - belépés, cikk létrehozása, az Edit Article gombra kattintás, a cikk címébe a
+    # "modified" szó beírása és a Publish Article gombbal a változtatás mentése, végül a cikk aloldalán megjelenő
+    # módosított cím ellenőrzése
     def test_modify_article(self):
         self.test_create_new_article()
 
@@ -116,15 +111,14 @@ class TestConduit(object):
         time.sleep(2)
         # self.driver.find_element_by_xpath('//input[@class="form-control form-control-lg"]').send_keys(" modified")
         self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(" modified")
-        time.sleep(2)
+        time.sleep(3)
         self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
 
-        time.sleep(2)
+        time.sleep(4)
         article_title = self.driver.find_element_by_xpath('//h1[text()="Chocolate lollipop oat cake modified"]')
         assert article_title.text == "Chocolate lollipop oat cake modified"
 
-
-    # # Test7 - cikk törlése - belépés után a New Article gombra kattintás, új cikk létrehozása, majd törlés után
+    # Test7 - cikk törlése - belépés után a New Article gombra kattintás, új cikk létrehozása, majd törlés után
     # annak ellenőrzése, hogy a megjelenő My Articles listában egyik cikknek a címe sem egyezik a létrehozott cikk
     # címével // a cikk aloldalán nem jelenik meg a delete gomb
     def test_delete_article(self):
@@ -133,15 +127,15 @@ class TestConduit(object):
         delete_btn = WebDriverWait(
             self.driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, ('//button[@class="btn btn-outline-danger btn-sm"]')))
-    )
+        )
         delete_btn.click()
 
         time.sleep(3)
-        self.driver.find_element_by_xpath('//a[@href="#/@Tester12@gmail.com/"]').click() # username-re cserélhető
+        self.driver.find_element_by_xpath('//a[@href="#/@Tester15@gmail.com/"]').click()
         time.sleep(3)
-        article_titles = self.driver.find_elements_by_xpath('//h1')[-1]
-        assert "Chocolate lollipop oat cake" not in article_titles
-
+        article_title = self.driver.find_elements_by_xpath('//h1')[-1]
+        # assert "Chocolate lollipop oat cake" not in article_titles
+        assert article_title != "Chocolate lollipop oat cake"
 
     # Test8 - adatok kilistázása - belépés után a lorem cimkére kattintás, a lorem cimkével rendelkező cikkek
     # kilistázódnak, ezután összehasonlítom a kapott lista hosszát (1-et kivonva belőle a conduit h1-es elem miatt) az
@@ -157,7 +151,8 @@ class TestConduit(object):
         #         continue
         #     title = i.text
 
-        articles_with_lorem_tag = self.driver.find_elements_by_xpath('//div[@class="article-preview"]//a[@href="#/tag/lorem"]')
+        articles_with_lorem_tag = self.driver.find_elements_by_xpath(
+            '//div[@class="article-preview"]//a[@href="#/tag/lorem"]')
         assert len(listed_articles) - 1 == len(articles_with_lorem_tag)
 
     # Test9 - adatok kimentése - belépés után létrehozom a Global Feedben található cikkek listáját, a listában
@@ -172,15 +167,12 @@ class TestConduit(object):
             for i in articles_preview:
                 txt1.write(f"{i.text}")
 
-
         with open("articles_preview.txt", "r") as txt1:
             txt2 = txt1.readlines()
             # print(txt2, end='')
             for line in txt2:
                 print(line, end='')
                 # assert line[1] == "testuser1"
-
-
 
     # Test10 - lapozás - belépés után létrehozok egy listát, amelyben a page-link osztálynevű lapozó gombok vannak,
     # a lista elemein for ciklussal végigmegyek, majd megkeresem az utosló lapozó gombot, ami a lenti attribútumokkal
@@ -194,9 +186,9 @@ class TestConduit(object):
             i.click()
 
         time.sleep(3)
-        last_page_number = self.driver.find_element_by_xpath('//li[@class="page-item active" and @data-test="page-link-2"]')
+        last_page_number = self.driver.find_element_by_xpath(
+            '//li[@class="page-item active" and @data-test="page-link-2"]')
         assert last_page_number.text == "2"
-
 
     # Test11 - ismételt és sorozatos adatbevitel - belépés után az első cikket megkeressük a Global Feedben és
     # rákattintunk, létrehozunk egy num nevű változót 0 értékkel, egy for ciklusban a komment mezőbe egymás után 5 db
@@ -215,9 +207,7 @@ class TestConduit(object):
                 self.driver.find_element_by_xpath('//button[text()="Post Comment"]').click()
                 time.sleep(3)
 
-
         assert self.driver.find_elements_by_xpath('//p[@class="card-text"]')[0].text == "Comment5"
-
 
     # Test12 - ismételt és sorozatos adatbevitel - belépés után az első cikket megkeressük a Global Feedben és
     # rákattintunk, létrehozunk egy num nevű változót 0 értékkel, egy for ciklusban a komment mezőbe egymás után 5 db
@@ -236,12 +226,3 @@ class TestConduit(object):
             time.sleep(3)
             assert self.driver.find_element_by_xpath('//p[@class="card-text"]').text == (f"Comment {num}")
             num += 1
-
-
-
-
-
-
-
-
-
