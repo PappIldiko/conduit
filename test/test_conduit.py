@@ -88,7 +88,7 @@ class TestConduit(object):
         time.sleep(2)
         self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys(
             "Chocolate lollipop oat cake")
-        self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
+        # self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
         self.driver.find_element_by_xpath(
             '//form//textarea[@placeholder="Write your article (in markdown)"]').send_keys(
             "Powder donut liquorice I love I love powder sesame snaps jujubes. Gummies chocolate sweet roll. Icing I love powder I love danish cookie I love. Cake chocolate bar I love. Cupcake I love cheesecake pastry I love fruitcake candy croissant. Lollipop caramels I love bonbon. Gingerbread powder macaroon cookie. Sesame snaps tootsie roll bear claw I love. Brownie cake gingerbread carrot cake marshmallow I love halvah.")
@@ -106,17 +106,22 @@ class TestConduit(object):
         self.test_create_new_article()
 
         time.sleep(3)
-        self.driver.find_element_by_xpath('//span[normalize-space(text()=" Edit Article")]').click()
+        # self.driver.find_element_by_xpath('//span[normalize-space(text()=" Edit Article")]').click()
         self.driver.find_element_by_xpath('//a[@class="btn btn-sm btn-outline-secondary"]').click()
         time.sleep(2)
         # self.driver.find_element_by_xpath('//input[@class="form-control form-control-lg"]').send_keys(" modified")
-        self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys("Chocolate lollipop oat cake modified")
+        # self.driver.find_elements_by_xpath('//form//input')[2].send_keys("bonbon")
+        self.driver.find_elements_by_xpath('//form//input')[1].send_keys("About cakes")
+        # self.driver.find_element_by_xpath('//input[@placeholder="Article Title"]').send_keys("Chocolate lollipop oat cake modified")
         time.sleep(3)
         self.driver.find_element_by_xpath('//button[normalize-space(text()="Publish Article")]').click()
 
         time.sleep(5)
-        article_title = self.driver.find_element_by_xpath('//h1[text()="Chocolate lollipop oat cake modified"]')
-        assert article_title.text == "Chocolate lollipop oat cake modified"
+        # article_title = self.driver.find_element_by_xpath('//h1[text()="Chocolate lollipop oat cake modified"]')
+        # assert article_title.text == "Chocolate lollipop oat cake modified"
+        article_about = self.driver.find_element_by_xpath('//p[text()="About cakes"]')
+        assert article_about.text == "About cakes"
+
 
     # Test7 - cikk törlése - belépés után a New Article gombra kattintás, új cikk létrehozása, majd törlés után
     # annak ellenőrzése, hogy a megjelenő My Articles listában egyik cikknek a címe sem egyezik a létrehozott cikk
